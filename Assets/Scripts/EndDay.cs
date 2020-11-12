@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class EndDay : MonoBehaviour
 {
+
+    public int calories;
     public void ResetDay()
     {
         calories = 0;
     }
 }
+
