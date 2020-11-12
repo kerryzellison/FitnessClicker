@@ -16,10 +16,10 @@ public class Calories : MonoBehaviour
     {
         caloriesAmount.text = "calories: " + calories; // checks how many calories you have earned 
 
-        if (counter >= 2)
+        if (counter >= 3)
         {
-            calories += 1; // if the player clicks 2 times they get 1 calorie added and resets the counter to 0
-            counter -= 2;
+            calories += 1; // if the player clicks 3 times they get 1 calorie added and resets the counter to 0
+            counter -= 3;
         }  
         
     }
