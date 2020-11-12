@@ -10,7 +10,7 @@ public class EndDay : MonoBehaviour
 
     private void Start()
     {
-        
+        //hello
       
     }
     public void Update()
