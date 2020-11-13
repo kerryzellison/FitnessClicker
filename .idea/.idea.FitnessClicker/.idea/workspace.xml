@@ -32,8 +32,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/EndDay.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InfoTextScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CaloriesBurnedText.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Calories.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/IncomeText.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Calories.cs" />
       </list>
     </option>
   </component>
