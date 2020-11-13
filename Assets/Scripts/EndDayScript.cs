@@ -10,6 +10,8 @@ public class EndDayScript : MonoBehaviour
     public double savings;
     public Text workedOutForText;
     public int workedOutDaysAmount;
+    public Calories calories;
+    public CaloriesBurned kcalsBurnedText;
 
     public void Start()
     {
@@ -26,5 +28,8 @@ public class EndDayScript : MonoBehaviour
     {
         savings += 1000;
         workedOutDaysAmount++;
+        calories.calories = 0;
+        kcalsBurnedText.caloriesBurned.text = calories.calories.ToString();
     }
+   
 }
