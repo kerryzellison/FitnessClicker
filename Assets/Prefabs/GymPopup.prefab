@@ -145,7 +145,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 8d044886e3ec33442979506113e48783, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 412311027601220802}
   - component: {fileID: 880611311901938218}
   - component: {fileID: 6912155696867570411}
+  - component: {fileID: 5290004634564607917}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -280,19 +281,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 880611311901938218}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -4408243254586678160}
-        m_TargetAssemblyTypeName: TogglePopUp, Assembly-CSharp
-        m_MethodName: ClosePopup
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &5290004634564607917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309716099062767058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e023ac255797b4f8e82c6aa16dc2c6b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popup: {fileID: 3855732525946792206}
+  shouldPopUp: 0
 --- !u!1 &2957354109214198691
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +566,7 @@ GameObject:
   - component: {fileID: 7001589892691706054}
   - component: {fileID: 7045613477385640512}
   m_Layer: 5
-  m_Name: TapButton
+  m_Name: tapbuttonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,11 +620,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: 8d044886e3ec33442979506113e48783, type: 3}
+    m_FontSize: 35
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -719,7 +722,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2104984604999949832}
   - component: {fileID: 8059402952487050289}
-  - component: {fileID: -4408243254586678160}
   m_Layer: 5
   m_Name: GymPopup
   m_TagString: Untagged
@@ -762,19 +764,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 3
   m_AspectRatio: 1.778084
---- !u!114 &-4408243254586678160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3855732525946792206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e023ac255797b4f8e82c6aa16dc2c6b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popup: {fileID: 3855732525946792206}
 --- !u!1 &3973682979791738004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,19 +992,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8142514213147726654}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -4408243254586678160}
-        m_TargetAssemblyTypeName: TogglePopUp, Assembly-CSharp
-        m_MethodName: OpenPopup
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &6345261018534616348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1029,6 +1006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popup: {fileID: 8286166459812949324}
+  shouldPopUp: 1
 --- !u!1 &4759940260989936063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,8 +1193,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -294.1, y: 190.3}
-  m_SizeDelta: {x: 275.7591, y: 109.82794}
+  m_AnchoredPosition: {x: -284.5, y: 190.3}
+  m_SizeDelta: {x: 294.88483, y: 109.82794}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5179987725140203326
 CanvasRenderer:
@@ -1247,9 +1225,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: 8d044886e3ec33442979506113e48783, type: 3}
+    m_FontSize: 100
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 100
@@ -1401,9 +1379,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 8d044886e3ec33442979506113e48783, type: 3}
     m_FontSize: 25
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
