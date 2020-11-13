@@ -6,56 +6,27 @@ using UnityEngine.UI;
 
 public class DaySystemScript : MonoBehaviour
 {
-    public Text caloriesOfflineText;
-    public Text timeText;
-    private string currentTime;
-    private int interval = 1;
-    private float _nextTime = 0;
-    void Start()
-    {
-        
-        if (PlayerPrefs.HasKey("LAST_ONLINE"))
-        {
-            DateTime lastOnline = DateTime.Parse(PlayerPrefs.GetString("LAST_ONLINE"));
-
-            TimeSpan timeSpanOffline = DateTime.Now - lastOnline;
-            
-            PlayerPrefs.DeleteKey("LAST_ONLINE"); //remove when building!
+    public class DateTimeTest : MonoBehaviour{
+        long GetEpochTimeMilliseconds(){
+            DateTime startOfTime = new DateTime(1970, 1, 1, 0, 0, 0);
+            var time = Convert.ToInt64(DateTime.UtcNow.Subtract(startOfTime).TotalMilliseconds);
+            return time;
         }
-        else
-        {
-            Debug.Log("WELCOME");
-        }
-    }
 
-    private void FixedUpdate()
-    {
-        if (Time.time >= _nextTime)
-        {
-            
-            UpdateTimeEverySec();
-            _nextTime += interval;
+        public long lastCalorieBurnTime;
+        public void Start(){
+            lastCalorieBurnTime = GetEpochTimeMilliseconds();
+        }
+
+        void Update(){
+            var millisecondsPassed = GetEpochTimeMilliseconds() - lastCalorieBurnTime;
+            var secondsPassed = millisecondsPassed / 1000;
+            if (secondsPassed >= 60 * 30){ // 60 sec * 30 = 30 minutes.
+                lastCalorieBurnTime = GetEpochTimeMilliseconds(); // reset the timer.
+            }
+            Debug.Log(secondsPassed.ToString());
         }
     }
 
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.SetString("LAST_ONLINE",DateTime.Now.ToString());
-    }
-
-    void OnApplicationStart()
-    {
-        PlayerPrefs.SetString("LAST_OFFLINE",DateTime.Now.ToString());
-    }
-
-    void UpdateTimeEverySec()
-    {
-        currentTime = DateTime.Now.ToString();
-    }
-
-    void CountTimeOnline()
-    {
-        //TODO
-    }
-    
+   
 }
