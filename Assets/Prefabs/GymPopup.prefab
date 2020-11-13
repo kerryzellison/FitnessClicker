@@ -895,8 +895,9 @@ GameObject:
   - component: {fileID: 3409080145214875103}
   - component: {fileID: 8142514213147726654}
   - component: {fileID: 7044795376544187819}
+  - component: {fileID: 6345261018534616348}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BicepsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1002,7 +1003,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8142514213147726654}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -4408243254586678160}
+        m_TargetAssemblyTypeName: TogglePopUp, Assembly-CSharp
+        m_MethodName: OpenPopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6345261018534616348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4375930149569513722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e023ac255797b4f8e82c6aa16dc2c6b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popup: {fileID: 8286166459812949324}
 --- !u!1 &4759940260989936063
 GameObject:
   m_ObjectHideFlags: 0
