@@ -2,19 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class TogglePopUp : MonoBehaviour{
+public class TogglePopUp : MonoBehaviour,IPointerClickHandler
+{
     public GameObject popup;
-    
-    public void OpenPopup(){
-        if (popup.activeSelf == false){
-            popup.SetActive(true);
-        }
-    }
 
-    public void ClosePopup(){
-        if (popup.activeSelf){
-            popup.SetActive(false);
-        }
+    public bool shouldPopUp;
+    
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        popup.SetActive(shouldPopUp);
     }
 }
+

@@ -5,26 +5,27 @@ using UnityEngine;
 
 public class EndDay : MonoBehaviour
 {
-    public int calorieGoal;
-    public bool endDayButton = false;
+    public static bool endDayButton = false;
+    public int calorieGoal = Calories.calories;
 
-
- private void Start()
- {
-     calorieGoal = Calories.calories;
- }
-
- public void Update()
+    private void Start()
     {
-        if ((calorieGoal = 50)
-        {
-            endDayButton = true;
-            Click();
-        }
+        //hello
+      
+    }
+    public void Update()
+    {
+        Click();
     }
 
- public void Click()
+    public void Click()
     {
+        if (calorieGoal >= 10)
+        {
+            endDayButton = true;
+            Debug.Log("its working");
+        }
+
         calorieGoal = 0;
     }
 }

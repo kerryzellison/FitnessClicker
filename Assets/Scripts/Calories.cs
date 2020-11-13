@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Calories : MonoBehaviour
 {
     public Text caloriesAmount;
-    public double calories;
+    public static int calories;
     public int counter = 0;
 
     public void Start()
