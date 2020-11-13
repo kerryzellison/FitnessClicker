@@ -684,12 +684,12 @@ PrefabInstance:
     - target: {fileID: 2104984604999949832, guid: 6d68ac942a4b36c4ca41f7194978ee88,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2104984604999949832, guid: 6d68ac942a4b36c4ca41f7194978ee88,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2104984604999949832, guid: 6d68ac942a4b36c4ca41f7194978ee88,
         type: 3}
@@ -704,7 +704,7 @@ PrefabInstance:
     - target: {fileID: 2104984604999949832, guid: 6d68ac942a4b36c4ca41f7194978ee88,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -0.15734863
       objectReference: {fileID: 0}
     - target: {fileID: 2104984604999949832, guid: 6d68ac942a4b36c4ca41f7194978ee88,
         type: 3}
@@ -779,27 +779,27 @@ PrefabInstance:
     - target: {fileID: 3855732525946792206, guid: 6d68ac942a4b36c4ca41f7194978ee88,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4163087916789170470, guid: 6d68ac942a4b36c4ca41f7194978ee88,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4163087916789170470, guid: 6d68ac942a4b36c4ca41f7194978ee88,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4163087916789170470, guid: 6d68ac942a4b36c4ca41f7194978ee88,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4163087916789170470, guid: 6d68ac942a4b36c4ca41f7194978ee88,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 6912155696867570411, guid: 6d68ac942a4b36c4ca41f7194978ee88,
         type: 3}
@@ -1602,8 +1602,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e95c0709cff6543b9f8fca98316574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  incomeText: {fileID: 1874934224}
-  income: 0
+  savingsText: {fileID: 330850204}
+  savings: 0
+  workedOutForText: {fileID: 742179989}
+  workedOutDaysAmount: 0
 --- !u!1 &996589052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3855732525946792206, guid: 6d68ac942a4b36c4ca41f7194978ee88,
@@ -2425,7 +2427,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Todays Calories Intake: X amount calories'
+  m_Text: 'Todays Calories Intake: 3000'
 --- !u!222 &1628034821
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2988,7 +2990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   caloriesBurned: {fileID: 1812276163}
   caloriesMain: 0
-  calories: {fileID: 0}
+  calories: {fileID: 1541677075}
 --- !u!114 &1812276163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3022,7 +3024,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Todays Calories Burned: X amount calories'
+  m_Text: 'Todays Calories Burned: 0'
 --- !u!222 &1812276164
 CanvasRenderer:
   m_ObjectHideFlags: 0

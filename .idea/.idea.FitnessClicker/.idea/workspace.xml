@@ -34,6 +34,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/IncomeText.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calories.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CaloriesBurnedText.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SavingsText.cs" />
       </list>
     </option>
   </component>
