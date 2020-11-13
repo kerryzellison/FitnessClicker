@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO; // allows us to save and save on current computer
 using System.Xml; //we are using xml files to save and load 
-using System.Xml.Serialization;
+using System.Xml.Serialization; 
 
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager instance;
-    public SaveData activeSave;
+    public SaveData activeSave; // this is what we are gonna save
 
     public bool hasLoaded;
 
@@ -46,10 +46,10 @@ public class SaveManager : MonoBehaviour
 
     public void Save()
     {
-        string dataPath = Application.persistentDataPath;
+        string dataPath = Application.persistentDataPath; // will point the save to appdata\local\packages etc..
 
         var serializer = new XmlSerializer(typeof(SaveData));
-        var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Create);
+        var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Create); // a way of storing files in a memory
         serializer.Serialize(stream, activeSave);
         stream.Close();
 
@@ -84,7 +84,7 @@ public class SaveManager : MonoBehaviour
 }
 
 [System.Serializable]
-public class SaveData
+public class SaveData // method with all data we want to be saved
 {
     public string saveName;
 

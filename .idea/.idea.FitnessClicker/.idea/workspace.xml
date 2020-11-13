@@ -17,6 +17,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+<<<<<<< HEAD
     <setting file="file://$USER_HOME$/OneDrive/Skrivbord/IdleRPG-main/Assets/Scripts/SaveLoad.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/OneDrive/Skrivbord/Scripts/TogglePopUp.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Calories.cs" root0="FORCE_HIGHLIGHTING" />
@@ -24,6 +25,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CaloriesBurned.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EndDayScript.cs" root0="FORCE_HIGHLIGHTING" />
+=======
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CaloriesBurned.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Calories.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InfoTextScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DaySystemScript.cs" root0="FORCE_HIGHLIGHTING" />
+>>>>>>> 8e5209a4ecdc4f667c854ec50c27495a5d144c14
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -35,8 +42,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Calories.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CaloriesBurnedText.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SavingsText.cs" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EndDayScript.cs" />
+=======
+        <option value="$PROJECT_DIR$/Assets/Scripts/DaySystemScript.cs" />
+>>>>>>> 8e5209a4ecdc4f667c854ec50c27495a5d144c14
       </list>
     </option>
   </component>
@@ -93,6 +104,7 @@
       <workItem from="1605194510738" duration="2000" />
       <workItem from="1605255079827" duration="2780000" />
       <workItem from="1605260065760" duration="585000" />
+      <workItem from="1605264513903" duration="5280000" />
     </task>
     <servers />
   </component>
