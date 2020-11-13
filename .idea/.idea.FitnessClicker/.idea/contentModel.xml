@@ -9,9 +9,9 @@
         <e p="Scripts" t="Include">
           <e p="Calories.cs" t="Include" />
           <e p="CaloriesBurned.cs" t="Include" />
-          <e p="EndDay.cs" t="Include" />
+          <e p="DaySystemScript.cs" t="Include" />
+          <e p="EndDayScript.cs" t="Include" />
           <e p="InfoTextScript.cs" t="Include" />
-          <e p="SavingsText.cs" t="Include" />
           <e p="TogglePopUp.cs" t="Include" />
         </e>
       </e>

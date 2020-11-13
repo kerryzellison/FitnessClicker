@@ -17,13 +17,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/IncomeText.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/OneDrive/Skrivbord/IdleRPG-main/Assets/Scripts/SaveLoad.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/OneDrive/Skrivbord/Scripts/TogglePopUp.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CaloriesBurned.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Calories.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InfoTextScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CaloriesBurned.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EndDay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DaySystemScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -35,6 +32,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Calories.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CaloriesBurnedText.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SavingsText.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DaySystemScript.cs" />
       </list>
     </option>
   </component>
@@ -91,6 +89,7 @@
       <workItem from="1605194510738" duration="2000" />
       <workItem from="1605255079827" duration="2780000" />
       <workItem from="1605260065760" duration="585000" />
+      <workItem from="1605264513903" duration="5280000" />
     </task>
     <servers />
   </component>
