@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class IncomeText : MonoBehaviour
 {
     public Text incomeText;
@@ -16,10 +17,10 @@ public class IncomeText : MonoBehaviour
     public void Update()
     {
         incomeText.text = "Income: " + income;
+    }
 
-       if (GetComponent<EndDay>()) // when end day is pressed player will get X amount of money 
-        {
-            income += 1000;
-        }
+   public void Click() // when end day is pressed player will get X amount of money
+    {
+        income += 1000;
     }
 }
