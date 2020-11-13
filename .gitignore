@@ -67,3 +67,5 @@ crashlytics-build.properties
 .idea/.idea.FitnessClicker/.idea/contentModel.xml
 .idea/.idea.FitnessClicker/.idea/workspace.xml
 *.xml
+.idea/.idea.FitnessClicker/.idea/workspace.xml
+*.xml
