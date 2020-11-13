@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Calories.cs" t="Include" />
+          <e p="CaloriesBurnedText.cs" t="Include" />
           <e p="EndDay.cs" t="Include" />
           <e p="IncomeText.cs" t="Include" />
           <e p="TogglePopUp.cs" t="Include" />

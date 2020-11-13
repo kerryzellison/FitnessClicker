@@ -15,7 +15,7 @@ public class IncomeText : MonoBehaviour
 
     public void Update()
     {
-        incomeText.text = "income " + income;
+        incomeText.text = "Income: " + income;
 
        if (GetComponent<EndDay>()) // when end day is pressed player will get X amount of money 
         {
