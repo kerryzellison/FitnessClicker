@@ -19,13 +19,6 @@ namespace Clicker.Player{
             get => PlayerPrefs.GetInt(this.name+"_calories", 1);
             private set => PlayerPrefs.SetInt(this.name+"_calories", value);
         }
-        public int WeightAmount {
-            get => PlayerPrefs.GetInt(this.name+"_weight", 1);
-            private set => PlayerPrefs.SetInt(this.name+"_weight", value);
-        }
-        public void SaveAmount(int amount, Resource resource){
-            amount = resource.Owned;
-        }
         public void GetAmount(int amount, Resource resource){
             resource.Owned = amount;
         }
