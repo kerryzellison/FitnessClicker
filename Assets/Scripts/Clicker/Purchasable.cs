@@ -1,4 +1,5 @@
 ﻿using System;
+using Clicker.Player;
 using UnityEngine;
 using UnityEngine.UI;
 
