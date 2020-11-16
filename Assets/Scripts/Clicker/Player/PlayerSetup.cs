@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Clicker.Player{
@@ -6,7 +7,9 @@ namespace Clicker.Player{
         public PlayerData playerData;
         public InputField inputField;
         public Button submitButton;
+        public Button startButton;
         public GameObject startPopup;
+        public GameObject welcomeScreen;
         public bool activePlayer;
         public int playerIsActive{
             get => PlayerPrefs.GetInt("ActiveKey", 0);
@@ -18,21 +21,29 @@ namespace Clicker.Player{
             else if (playerIsActive == 1) activePlayer = true;
 
             if (!activePlayer){
+                welcomeScreen.SetActive(true);
                 startPopup.gameObject.SetActive(true);
                 inputField.gameObject.SetActive(true);
-                submitButton.gameObject.SetActive(true); 
+                submitButton.gameObject.SetActive(true);
             }
             else if (activePlayer){
-                startPopup.gameObject.SetActive(false);
+                welcomeScreen.SetActive(true);
+                startPopup.SetActive(true);
+                inputField.gameObject.SetActive(false);
+                submitButton.gameObject.SetActive(false);
                 playerData.GetAmount(playerData.CaloriesAmount, playerData.calories);
                 playerData.GetAmount(playerData.MoneyAmount, playerData.money);
                 //playerData.UpdateCurrentTrainer();
             }
         }
+        public void ClickStartButton(){
+            welcomeScreen.SetActive(false);
+            if(activePlayer) startPopup.SetActive(false);
+        }
         public void SubmitUserName(){
             playerIsActive = 1;
             playerData.playerName = inputField.text;
-            startPopup.gameObject.SetActive(false);
+            startPopup.SetActive(false);
         }
     }
 }
