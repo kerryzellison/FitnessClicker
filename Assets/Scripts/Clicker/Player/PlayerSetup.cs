@@ -31,6 +31,7 @@ namespace Clicker.Player{
         }
         public void SubmitUserName(){
             playerIsActive = 1;
+            playerData.playerName = inputField.text;
             startPopup.gameObject.SetActive(false);
         }
     }
