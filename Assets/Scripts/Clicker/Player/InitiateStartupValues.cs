@@ -5,6 +5,7 @@ namespace Clicker.Player{
     public class InitiateStartupValues : MonoBehaviour{
         public PlayerData playerData;
         public DayDisplayScript dayDisplayScript;
+        public PlayerSetup playerSetup;
         public int caloriesStartAmount;
         public int burnedCaloriesStartAmount;
         public int startingMoneyAmount;
@@ -23,10 +24,11 @@ namespace Clicker.Player{
             dayDisplayScript.days = 1;
             dayDisplayScript.startTime = dayDisplayScript.timerScript.GetEpochTimeMilliseconds();
             moneyText.text = $"Money: {startingMoneyAmount}";
-            bodyTypeText.text = $"Body type: Undecided";
+            //bodyTypeText.text = $"Body type: Undecided";
             currentBurnedCalories.text = $"Todays calories burned: {burnedCaloriesStartAmount}";
             usernameText.text = playerData.playerName;
             intakeCaloriesText.text = $"Todays calories intake: {intakeCaloriesText}";
+            playerSetup.SwitchBodyType(PlayerSetup.BodyType.Obese2);
         }
     }
 }

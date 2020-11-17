@@ -18,9 +18,9 @@ namespace Clicker.Player{
         public Text incomeText;
         public Text bodyTypeText;
         public Text needToBurnText;
+        public Text weightText;
         public Sprite[] characterSprites;
         public GameObject characterSpriteDisplay;
-        private BodyType _bodyType;
         public enum BodyType{
             Obese2,
             Obese1,
@@ -38,23 +38,43 @@ namespace Clicker.Player{
             CheckForActivePlayer();
         }
 
-        void SwitchBodyType(){
-            switch (_bodyType){
+        public void SwitchBodyType(BodyType bodyType){
+            switch (bodyType){
                 //here we set the values needed for amount of burned calories and amount of intake calories etc.
                 case BodyType.Obese2:
-                    characterSpriteDisplay.GetComponent<SpriteRenderer>().sprite = characterSprites[0];
+                    //characterSpriteDisplay.GetComponent<SpriteRenderer>().sprite = characterSprites[0];
+                    bodyTypeText.text = "Body type: Class 2 obese";
+                    playerData.caloriesNeededToBurn = 600;
+                    playerData.intakeCalories.Owned = 600;
+                    weightText.text = "Weight: 150";
                     break;
                 case BodyType.Obese1:
                     characterSpriteDisplay.GetComponent<SpriteRenderer>().sprite = characterSprites[1];
+                    bodyTypeText.text = "Body type: Class 1 obese";
+                    playerData.caloriesNeededToBurn = 1200;
+                    playerData.intakeCalories.Owned = 1200;
+                    weightText.text = "Weight: 115";
                     break;
                 case BodyType.Average:
                     characterSpriteDisplay.GetComponent<SpriteRenderer>().sprite = characterSprites[2];
+                    bodyTypeText.text = "Body type: Average";
+                    playerData.caloriesNeededToBurn = 2400;
+                    playerData.intakeCalories.Owned = 2400;
+                    weightText.text = "Weight: 80";
                     break;
                 case BodyType.Athletic:
                     characterSpriteDisplay.GetComponent<SpriteRenderer>().sprite = characterSprites[3];
+                    bodyTypeText.text = "Body type: Athletic";
+                    playerData.caloriesNeededToBurn = 4800;
+                    playerData.intakeCalories.Owned = 4800;
+                    weightText.text = "Weight: 95";
                     break;
                 case BodyType.Muscular:
                     characterSpriteDisplay.GetComponent<SpriteRenderer>().sprite = characterSprites[4];
+                    bodyTypeText.text = "Body type: Muscular";
+                    playerData.caloriesNeededToBurn = 9600;
+                    playerData.intakeCalories.Owned = 9600;
+                    weightText.text = "Weight: 110";
                     break;
             }
         }
