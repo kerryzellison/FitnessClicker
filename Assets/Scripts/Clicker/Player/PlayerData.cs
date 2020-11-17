@@ -9,7 +9,10 @@ namespace Clicker.Player{
         public ResourceProducer currentTrainer;
         public Resource money;
         public Resource calories;
-        public Resource weight;
+        public Resource burnedCalories;
+        public Resource intakeCalories;
+        public Resource income;
+        public int caloriesNeededToBurn;
         public string playerName;
         public int MoneyAmount {
             get => PlayerPrefs.GetInt(this.name+"_Money", 1);

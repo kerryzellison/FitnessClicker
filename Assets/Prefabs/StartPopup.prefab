@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 658756173978580023}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Clicker.Player.PlayerSetup, Assembly-CSharp
         m_MethodName: ClickStartButton
         m_Mode: 1
@@ -675,8 +675,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 658756173978580023}
-        m_TargetAssemblyTypeName: PlayerSetup, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Clicker.Player.PlayerSetup, Assembly-CSharp
         m_MethodName: SubmitUserName
         m_Mode: 1
         m_Arguments:
@@ -994,14 +994,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4941961579275804514}
-  - component: {fileID: 658756173978580023}
   m_Layer: 5
   m_Name: StartPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4941961579275804514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1022,22 +1021,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &658756173978580023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7791622951250864228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d239862f59046948d83f7bc624af30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 70caaa7370b0241d5be96404eef2305f, type: 2}
-  inputField: {fileID: 658756172544025412}
-  submitButton: {fileID: 658756172017672835}
-  startButton: {fileID: 1196306674}
-  startPopup: {fileID: 7791622951250864228}
-  welcomeScreen: {fileID: 1313688496}
-  activePlayer: 0

@@ -11,7 +11,7 @@ public class DaySystemScript : MonoBehaviour{
         return time;
     }
 
-    public long lastCalorieBurnTime;
+    /*public long lastCalorieBurnTime;
     public void Start(){
         lastCalorieBurnTime = GetEpochTimeMilliseconds();
     }
@@ -22,5 +22,5 @@ public class DaySystemScript : MonoBehaviour{
         if (secondsPassed >= 60 * 30){ // 60 sec * 30 = 30 minutes.
             lastCalorieBurnTime = GetEpochTimeMilliseconds(); // reset the timer.
         }
-    }
+    }*/
 }
