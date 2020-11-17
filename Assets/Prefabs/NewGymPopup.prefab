@@ -203,7 +203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1053985462424549611
 RectTransform:
   m_ObjectHideFlags: 0
@@ -514,9 +514,9 @@ RectTransform:
   m_Father: {fileID: 1053985462288238002}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1870, y: -51.000694}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1053985462898856395
@@ -721,9 +721,9 @@ RectTransform:
   m_Father: {fileID: 1053985462288238002}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 920.9999, y: -51.000694}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1818.0002, y: 102.00139}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1053985463855672198
@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 1053985463981585662}
   - component: {fileID: 1053985463981585661}
   m_Layer: 5
-  m_Name: Text
+  m_Name: BurnedCaloriesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -979,7 +979,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Calories burned: \n134672"
+  m_Text: 'Calories burned: '
 --- !u!114 &1053985463981585661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,7 +1100,7 @@ PrefabInstance:
     - target: {fileID: 2199929738059765727, guid: ff0b7fc5d63d6524eafa6fa344f09ccf,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2199929738059765727, guid: ff0b7fc5d63d6524eafa6fa344f09ccf,
         type: 3}
@@ -1254,24 +1254,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff0b7fc5d63d6524eafa6fa344f09ccf, type: 3}
---- !u!224 &4041560452026299043 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3942342786868357265, guid: ff0b7fc5d63d6524eafa6fa344f09ccf,
-    type: 3}
-  m_PrefabInstance: {fileID: 1053985463986543154}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2194749948257199067 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1213107958959487465, guid: ff0b7fc5d63d6524eafa6fa344f09ccf,
-    type: 3}
-  m_PrefabInstance: {fileID: 1053985463986543154}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad66094e3187e8d4da06664955e4ae13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3221638357007436981 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2455883696094598791, guid: ff0b7fc5d63d6524eafa6fa344f09ccf,
@@ -1287,6 +1269,24 @@ MonoBehaviour:
 --- !u!224 &1163963080024591853 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2199929738059765727, guid: ff0b7fc5d63d6524eafa6fa344f09ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1053985463986543154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2194749948257199067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1213107958959487465, guid: ff0b7fc5d63d6524eafa6fa344f09ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1053985463986543154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad66094e3187e8d4da06664955e4ae13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &4041560452026299043 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3942342786868357265, guid: ff0b7fc5d63d6524eafa6fa344f09ccf,
     type: 3}
   m_PrefabInstance: {fileID: 1053985463986543154}
   m_PrefabAsset: {fileID: 0}

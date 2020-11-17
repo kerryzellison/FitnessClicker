@@ -22,6 +22,7 @@ namespace Clicker.Player{
         public Sprite[] characterSprites;
         public GameObject characterSpriteDisplay;
         public Text trainerPopUpIncomeText;
+        public Text caloriesBurnedGymText;
         public enum BodyType{
             Obese2,
             Obese1,
@@ -104,6 +105,7 @@ namespace Clicker.Player{
 
         private void Update()
         {
+            caloriesBurnedGymText.text = $"Calories burned:{playerData.burnedCalories.Owned} ";
             trainerPopUpIncomeText.text = $"Income: {playerData.money.Owned}";
             caloriesBurnedText.text = $"Todays burned calories: {playerData.burnedCalories.Owned}";
             caloriesIntakeText.text = $"Todays calories intake: {playerData.intakeCalories.Owned}";
