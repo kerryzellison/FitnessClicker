@@ -24,11 +24,13 @@ namespace Clicker{
             this.productId = productId;
             UpdateText();
         }
+        
         public void Purchase() {
             if (!this.IsAffordable) 
                 return;
             this.data.GetActualCosts().Consume();
             this.Amount += 1;
+
         }
 
         public void Update() => UpdateText();

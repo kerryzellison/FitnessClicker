@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Clicker.Player;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Clicker.ResourceProduction {

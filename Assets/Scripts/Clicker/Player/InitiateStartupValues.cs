@@ -15,6 +15,7 @@ namespace Clicker.Player{
         public Text currentBurnedCalories;
         public Text usernameText;
         public Text intakeCaloriesText;
+        public Text IncomeText;
 
         public void SetStartupValues(){
             playerData.calories.Owned = caloriesStartAmount;
@@ -29,6 +30,8 @@ namespace Clicker.Player{
             usernameText.text = playerData.playerName;
             intakeCaloriesText.text = $"Todays calories intake: {intakeCaloriesText}";
             playerSetup.SwitchBodyType(PlayerSetup.BodyType.Obese2);
+            playerData.income.Owned = 1000;
+            IncomeText.text = $"Income; {playerData.income.Owned}";
         }
     }
 }
