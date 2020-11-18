@@ -135,7 +135,7 @@ namespace Clicker.Player{
             
 
             caloriesBurnedGymText.text = $"Calories burned:{playerData.burnedCalories.Owned} ";
-            trainerPopUpIncomeText.text = $"Income: {playerData.money.Owned}";
+            trainerPopUpIncomeText.text = $"Savings: {playerData.money.Owned}";
             caloriesBurnedText.text = $"Todays burned calories: {playerData.burnedCalories.Owned}";
             caloriesIntakeText.text = $"Todays calories intake: {playerData.intakeCalories.Owned}";
             savingsText.text = $"Savings: {playerData.money.Owned}";
