@@ -1,6 +1,7 @@
 ﻿using Clicker.Player;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace Clicker.ResourceProduction {
     public class ResourceProducer : MonoBehaviour {
@@ -9,6 +10,7 @@ namespace Clicker.ResourceProduction {
         public Purchasable amount;
         float elapsedTime;
         public string id;
+        public static GameObject SelectedTrainer;
         public void SetUp(Data data, Setup trainerSetup) {
             this.data = data;
             this.id = data.id;
@@ -23,7 +25,7 @@ namespace Clicker.ResourceProduction {
             this.titleText.text = this.ToString();
             this.amount.SetUpPlayer(data, "CountPlayer"); // this is the unit amount count
         }
-        
+
         public void Purchase() => this.amount.Purchase();
 
         void Update() {
