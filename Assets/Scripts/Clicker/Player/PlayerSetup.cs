@@ -130,6 +130,7 @@ namespace Clicker.Player{
         }
 
         private void Update(){
+            
 
             caloriesBurnedGymText.text = $"Calories burned:{playerData.burnedCalories.Owned} ";
             trainerPopUpIncomeText.text = $"Income: {playerData.money.Owned}";
