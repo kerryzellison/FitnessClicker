@@ -1,4 +1,5 @@
-﻿using Clicker.ResourceProduction;
+﻿using System.Collections.Generic;
+using Clicker.ResourceProduction;
 using Resources;
 using UnityEngine;
 
@@ -14,14 +15,6 @@ namespace Clicker.Player{
         public Resource income;
         public int caloriesNeededToBurn;
         public string playerName;
-        
-        public void UpdateCurrentTrainer(){
-            foreach (var productionUnit in FindObjectOfType<Setup>().datas){
-                if (currentTrainer.id == productionUnit.id){
-                    currentTrainer = productionUnit;
-                }
-                else return;
-            }
-        }
+        public List<string> usedTrainers;
     }
 }

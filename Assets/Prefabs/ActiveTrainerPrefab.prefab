@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 2815981384675154572}
   m_Layer: 5
   m_Name: ActiveTrainerPrefab
-  m_TagString: Untagged
+  m_TagString: ActiveTrainer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,6 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 0}
   titleText: {fileID: 8094193962084391265}
+  ActiveLabel: {fileID: 4712283024639015138}
   amount:
     trainerSetup: {fileID: 0}
     buttonLabel: {fileID: 2311212914965720018}

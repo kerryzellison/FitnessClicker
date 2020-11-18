@@ -7,10 +7,10 @@ namespace Clicker.ResourceProduction {
     public class ResourceProducer : MonoBehaviour {
         public Data data;
         public Text titleText;
+        public Text ActiveLabel;
         public Purchasable amount;
         float elapsedTime;
         public string id;
-        public static GameObject SelectedTrainer;
         public void SetUp(Data data, Setup trainerSetup) {
             this.data = data;
             this.id = data.id;
@@ -32,13 +32,17 @@ namespace Clicker.ResourceProduction {
             UpdateProduction();
             amount.Update();
         }
-
         void UpdateProduction() {
             this.elapsedTime += Time.deltaTime;
             if (this.elapsedTime >= this.data.productionTime) {
                 Produce();
                 this.elapsedTime -= this.data.productionTime;
             }
+        }
+
+        public void UpdateActiveText(){
+            this.ActiveLabel.text = $"<color=#ffffff><size=50>{this.data.name}:</size></color> \n" +
+                                    $"<color=#000000><size=30>Burns {this.data.GetProductionAmount()} calorie per {this.data.productionTime / 60} minutes.</size></color>";
         }
 
         public override string ToString(){

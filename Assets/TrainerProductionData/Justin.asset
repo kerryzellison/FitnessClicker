@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Justin
   m_EditorClassIdentifier: 
   costs:
-    amount: 6000
+    amount: 25000
     resource: {fileID: 11400000, guid: 0b8b688a461364e5590aec36aa4f9eb5, type: 2}
-  productionTime: 300
+  productionTime: 60
   production:
-    amount: 6
-    resource: {fileID: 11400000, guid: 687c80eb927bc4d92be9fb8a1cd83dba, type: 2}
+    amount: 35
+    resource: {fileID: 11400000, guid: 7603efcb5591d485f93c23f6f64a5557, type: 2}
+  id: Justin

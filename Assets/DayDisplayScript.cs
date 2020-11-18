@@ -82,8 +82,11 @@ public class DayDisplayScript : MonoBehaviour{
     void UpdateCalories(){
         if (playerData.burnedCalories.Owned >= playerData.intakeCalories.Owned){
             var burnedCalories = playerData.burnedCalories.Owned - playerData.intakeCalories.Owned;
-            playerData.calories.Owned -= burnedCalories;
+            playerData.calories.Owned += burnedCalories;
             playerData.caloriesNeededToBurn -= burnedCalories;
+            if (playerData.caloriesNeededToBurn <= 0){
+                playerData.caloriesNeededToBurn = 0;
+            }
             playerData.burnedCalories.Owned = 0;
         }else if (playerData.burnedCalories.Owned <= playerData.intakeCalories.Owned){
             var burnedCalories = playerData.intakeCalories.Owned - playerData.burnedCalories.Owned;

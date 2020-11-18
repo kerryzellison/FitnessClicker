@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Clicker.ResourceProduction;
 using UnityEngine;
@@ -24,11 +25,8 @@ namespace Clicker.Player{
         public Text weightText;
         public Sprite[] characterSprites;
         public GameObject characterSpriteDisplay;
-        public GameObject moveTrainerHere;
-        public GameObject trainerPrefab;
         public Text trainerPopUpIncomeText;
         public Text caloriesBurnedGymText;
-        public Text trainerDisplayText;
         public Text userName;
         public enum BodyType{
             Obese2,
@@ -50,27 +48,24 @@ namespace Clicker.Player{
         }
         void Start(){
             playerData.currentTrainer = this.starterTrainer;
+            playerData.usedTrainers.Add(starterTrainer.name);
             CheckForActivePlayer();
             BodyType savedBody = (BodyType) playerBodyType;
             SwitchBodyType(savedBody);
             userName.text = playerData.playerName;
-            savingsText.text = $"Savings: {playerData.money.Owned}";
             if (playerData.currentTrainer != null){
                 activeProducer.SetUp();
-                /*trainerDisplayText.text =
-                    $" {playerData.currentTrainer.name}:\nProduces " +
-                    $"{playerData.currentTrainer.GetProductionAmount()} calories per " +
-                    $"{playerData.currentTrainer.productionTime}";*/
+                var go = GameObject.FindWithTag("ActiveTrainer");
+                go.GetComponent<ResourceProducer>().amount.Amount = 1;
             }
         }
-
         public void SwitchBodyType(BodyType bodyType){
             switch (bodyType){
                 //here we set the values needed for amount of burned calories and amount of intake calories etc.
                 case BodyType.Obese2:
                     //characterSpriteDisplay.GetComponent<SpriteRenderer>().sprite = characterSprites[0];
                     bodyTypeText.text = "Body type: Class 2 obese";
-                    playerData.caloriesNeededToBurn = 600;
+                    playerData.caloriesNeededToBurn = 4200;
                     playerData.intakeCalories.Owned = 600;
                     weightText.text = "Weight: 150";
                     playerBodyType = (int) BodyType.Obese2;
@@ -110,7 +105,6 @@ namespace Clicker.Player{
                     break;
             }
         }
-
         private void CheckForActivePlayer(){
             // 0 equals no active player, 1 equals player is active
             if (playerIsActive == 0) activePlayer = false;
@@ -127,13 +121,10 @@ namespace Clicker.Player{
                 startPopup.SetActive(true);
                 inputField.gameObject.SetActive(false);
                 submitButton.gameObject.SetActive(false);
-                //playerData.UpdateCurrentTrainer();
             }
         }
 
         private void Update(){
-            
-
             caloriesBurnedGymText.text = $"Calories burned:{playerData.burnedCalories.Owned} ";
             trainerPopUpIncomeText.text = $"Savings: {playerData.money.Owned}";
             caloriesBurnedText.text = $"Todays burned calories: {playerData.burnedCalories.Owned}";
@@ -146,14 +137,12 @@ namespace Clicker.Player{
             }
         }
 
-        void CalculateTodaysIncome(){
-            //Use this when ending day for amount of money gained.
+        public void DisplayActiveTrainer(){
+            var go = GameObject.FindWithTag("ActiveTrainer");
+            go.gameObject.GetComponent<ResourceProducer>().data = playerData.currentTrainer;
+            go.gameObject.GetComponent<ResourceProducer>().gameObject.name = playerData.currentTrainer.name;
+            go.gameObject.GetComponent<ResourceProducer>().UpdateActiveText();
         }
-
-        void CalculateCurrentCalories(){
-            //Use this for calculating the users total current calories
-        }
-
         void CalculateBodyType(){
             //use this for calculating the body typ of the user depending on users total amount of calories.
             //Here you set the _bodyType and call the method SwitchBodyType.

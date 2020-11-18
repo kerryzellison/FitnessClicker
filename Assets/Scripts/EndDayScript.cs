@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class EndDayScript : MonoBehaviour
 {
-    public Text savingsText;
+    /*public Text savingsText;
     public double savings;
     public Text workedOutForText;
     public int workedOutDaysAmount;
@@ -22,18 +22,15 @@ public class EndDayScript : MonoBehaviour
     {
         savingsText.text = "Savings: " + savings;
         workedOutForText.text = "You've been a member for: " + workedOutDaysAmount + " Days";
-    }
+    }*/
 
-    public void Click() // when end day is pressed player will get X amount of money
+    /*public void Click() // when end day is pressed player will get X amount of money
     {
-        
         savings += 1000;
         workedOutDaysAmount++;
         WeeklyCalories.SavedWeeklyCalories += calories.calories;
         calories.calories = 0;
         kcalsBurnedText.caloriesBurned.text = calories.calories.ToString();
         WeeklyCalories.DayCounter++;
-        
-    }
-
+    }*/
 }
