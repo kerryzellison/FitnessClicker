@@ -1019,6 +1019,18 @@ MonoBehaviour:
           m_StringArgument: zapsplat_cartoon_bubble_pop_005_40277
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3969493806128890787}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3960192729203994162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1301,6 +1313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 70caaa7370b0241d5be96404eef2305f, type: 2}
+  starterTrainer: {fileID: 0}
   activeProducer: {fileID: 3960192729884950662}
   dayDisplayScript: {fileID: 3960192729305376850}
   inputField: {fileID: 4598511059543021042}
@@ -1363,7 +1376,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
