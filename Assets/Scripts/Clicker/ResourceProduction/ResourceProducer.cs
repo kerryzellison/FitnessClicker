@@ -14,8 +14,16 @@ namespace Clicker.ResourceProduction {
             this.id = data.id;
             this.gameObject.name = data.name;
             this.titleText.text = this.ToString();
-            this.amount.SetUp(data, "Count",trainerSetup); // this is the unit amount count
+            this.amount.SetUp(data, "Count",trainerSetup, this); // this is the unit amount count
         }
+        public void SetUpPlayer(Data data) {
+            this.data = data;
+            this.id = data.id;
+            this.gameObject.name = data.name;
+            this.titleText.text = this.ToString();
+            this.amount.SetUpPlayer(data, "CountPlayer"); // this is the unit amount count
+        }
+        
         public void Purchase() => this.amount.Purchase();
 
         void Update() {
@@ -37,6 +45,9 @@ namespace Clicker.ResourceProduction {
                    $"<color=#ffffff><size=40>Costs: {this.data.GetActualCosts()}</size></color>";
         }
 
+        public void DestroyThisResourceProducer(){
+            Destroy(this.gameObject);
+        }
         void Produce() {
             if (this.amount.Amount == 0)
                 return;
