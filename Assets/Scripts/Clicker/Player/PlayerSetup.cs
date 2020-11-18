@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Linq;
+using Clicker.ResourceProduction;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Clicker.Player{
     public class PlayerSetup : MonoBehaviour{
         public PlayerData playerData;
+        public PlayersActiveProducer activeProducer;
         public DayDisplayScript dayDisplayScript;
         public InputField inputField;
         public Button submitButton;
@@ -21,6 +23,8 @@ namespace Clicker.Player{
         public Text weightText;
         public Sprite[] characterSprites;
         public GameObject characterSpriteDisplay;
+        public GameObject moveTrainerHere;
+        public GameObject trainerPrefab;
         public Text trainerPopUpIncomeText;
         public Text caloriesBurnedGymText;
         public Text trainerDisplayText;
@@ -49,6 +53,13 @@ namespace Clicker.Player{
             SwitchBodyType(savedBody);
             userName.text = playerData.playerName;
             savingsText.text = $"Savings: {playerData.money.Owned}";
+            if (playerData.currentTrainer != null){
+                activeProducer.SetUp();
+                /*trainerDisplayText.text =
+                    $" {playerData.currentTrainer.name}:\nProduces " +
+                    $"{playerData.currentTrainer.GetProductionAmount()} calories per " +
+                    $"{playerData.currentTrainer.productionTime}";*/
+            }
         }
 
         public void SwitchBodyType(BodyType bodyType){
@@ -118,9 +129,8 @@ namespace Clicker.Player{
             }
         }
 
-        private void Update()
-        {
-            
+        private void Update(){
+
             caloriesBurnedGymText.text = $"Calories burned:{playerData.burnedCalories.Owned} ";
             trainerPopUpIncomeText.text = $"Income: {playerData.money.Owned}";
             caloriesBurnedText.text = $"Todays burned calories: {playerData.burnedCalories.Owned}";
@@ -131,16 +141,6 @@ namespace Clicker.Player{
             if (dayDisplayScript.days2 == 7){
                 // one week has passed and do the necessary calculations here.
             }
-
-            if (playerData.currentTrainer == null) 
-            {
-                return;
-            }
-            else
-            {
-                trainerDisplayText.text = $" {playerData.currentTrainer.name}:\nProduces {playerData.currentTrainer.GetProductionAmount()} calories per {playerData.currentTrainer.productionTime}";
-            }
-            
         }
 
         void CalculateTodaysIncome(){
