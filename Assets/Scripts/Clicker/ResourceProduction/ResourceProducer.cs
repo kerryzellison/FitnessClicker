@@ -43,7 +43,7 @@ namespace Clicker.ResourceProduction {
 
         public override string ToString(){
             return $"<color=#ffffff><size=45>{this.data.name}:</size></color> \n" +
-                   $"<color=#000000><size=35>Produces {this.data.GetProductionAmount()} calorie per {this.data.productionTime / 60} minutes.</size></color>\n" +
+                   $"<color=#000000><size=35>Burns {this.data.GetProductionAmount()} calorie per {this.data.productionTime / 60} minutes.</size></color>\n" +
                    $"<color=#ffffff><size=40>Costs: {this.data.GetActualCosts()}</size></color>";
         }
 

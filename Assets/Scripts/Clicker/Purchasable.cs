@@ -11,6 +11,7 @@ namespace Clicker{
         public Setup trainerSetup;
         ResourceProduction.Data data;
         public Text buttonLabel;
+        public Text ActiveLabel;
         string productId;
         public PlayerData playerData;
         private ResourceProducer _resourceProducer;
@@ -52,9 +53,9 @@ namespace Clicker{
             }
 
         }
-
         void UpdateTextForCurrent(){
-            this.buttonLabel.text = $"This shit cost you {this.data.GetActualCosts()}";
+            this.ActiveLabel.text = $"<color=#ffffff><size=50>{this.data.name}:</size></color> \n" +
+                                    $"<color=#000000><size=30>Burns {this.data.GetProductionAmount()} calorie per {this.data.productionTime / 60} minutes.</size></color>\n";
         }
         public void Update() => UpdateText();
         void UpdateText() => this.buttonLabel.text = this.IsAffordable ? $"<color=#ffffff><size=40>Costs: {this.data.GetActualCosts()}</size></color>" : 

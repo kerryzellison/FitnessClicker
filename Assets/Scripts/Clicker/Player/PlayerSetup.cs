@@ -7,6 +7,7 @@ using UnityEngine.UI;
 namespace Clicker.Player{
     public class PlayerSetup : MonoBehaviour{
         public PlayerData playerData;
+        public Data starterTrainer;
         public PlayersActiveProducer activeProducer;
         public DayDisplayScript dayDisplayScript;
         public InputField inputField;
@@ -48,6 +49,7 @@ namespace Clicker.Player{
             set => PlayerPrefs.SetInt("ActiveBody", value);
         }
         void Start(){
+            playerData.currentTrainer = this.starterTrainer;
             CheckForActivePlayer();
             BodyType savedBody = (BodyType) playerBodyType;
             SwitchBodyType(savedBody);
