@@ -9,12 +9,12 @@ namespace Clicker.ResourceProduction {
         public Purchasable amount;
         float elapsedTime;
         public string id;
-        public void SetUp(Data data) {
+        public void SetUp(Data data, Setup trainerSetup) {
             this.data = data;
             this.id = data.id;
             this.gameObject.name = data.name;
             this.titleText.text = this.ToString();
-            this.amount.SetUp(data, "Count"); // this is the unit amount count
+            this.amount.SetUp(data, "Count",trainerSetup); // this is the unit amount count
         }
         public void Purchase() => this.amount.Purchase();
 

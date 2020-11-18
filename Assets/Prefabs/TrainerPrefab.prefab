@@ -149,8 +149,9 @@ MonoBehaviour:
   data: {fileID: 0}
   titleText: {fileID: 4443659050206790505}
   amount:
+    trainerSetup: {fileID: 0}
     buttonLabel: {fileID: 7920781969836995034}
-    playerData: {fileID: 0}
+    playerData: {fileID: 11400000, guid: 70caaa7370b0241d5be96404eef2305f, type: 2}
   id: 
 --- !u!1 &4443659050206790516
 GameObject:

@@ -1,12 +1,15 @@
 ﻿using System;
 using Clicker.Player;
+using Clicker.ResourceProduction;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Clicker{
     [Serializable]
     public class Purchasable
+
     {
+        public Setup trainerSetup;
         ResourceProduction.Data data;
         public Text buttonLabel;
         string productId;
@@ -19,7 +22,9 @@ namespace Clicker{
             private set => PlayerPrefs.SetInt(this.data.name+"_"+this.productId, value);
         }
 
-        public void SetUp(ResourceProduction.Data data, string productId) {
+        public void SetUp(ResourceProduction.Data data, string productId,Setup trainerSetup)
+        {
+            this.trainerSetup = trainerSetup;
             this.data = data;
             this.productId = productId;
             UpdateText();
@@ -30,6 +35,15 @@ namespace Clicker{
                 return;
             this.data.GetActualCosts().Consume();
             this.Amount += 1;
+            foreach (var productionUnit in trainerSetup.datas)
+            {
+                if (productionUnit.name == this.data.name)
+                {
+                    playerData.currentTrainer = productionUnit;
+                    trainerSetup.datas.Remove(productionUnit);
+                }
+                
+            }
 
         }
 
