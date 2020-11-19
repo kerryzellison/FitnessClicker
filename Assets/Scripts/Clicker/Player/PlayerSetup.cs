@@ -169,15 +169,6 @@ namespace Clicker.Player{
                 playerData.usedTrainers.Add(playerData.currentTrainer.name);
             }
         }
-        void CalculateBodyType(){
-            //use this for calculating the body typ of the user depending on users total amount of calories.
-            //Here you set the _bodyType and call the method SwitchBodyType.
-            /*
-             if (playerData.calories.Owned >= 9000){
-                _bodyType = BodyType.Obese2;
-            }
-            */
-        }
         public void ClickStartButton(){
             welcomeScreen.SetActive(false);
             if(activePlayer) startPopup.SetActive(false);
@@ -189,6 +180,10 @@ namespace Clicker.Player{
             playerIsActive = 1;
             playerData.playerName = inputField.text;
             startPopup.SetActive(false);
+        }
+
+        public void QuitApplication(){
+            Application.Quit();
         }
     }
 }

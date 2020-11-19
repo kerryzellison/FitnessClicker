@@ -19,6 +19,7 @@ MonoBehaviour:
   intakeCalories: {fileID: 11400000, guid: 678aa8925bd594986b3721b3e055d912, type: 2}
   income: {fileID: 11400000, guid: e3f76c3b0d59346fc9c6fae2d4eca7fd, type: 2}
   caloriesNeededToBurn: 0
-  playerName: fred
+  dailyCalsNeedToBurn: 0
+  playerName: 
   usedTrainers:
   - StarterTrainer
