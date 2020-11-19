@@ -60,25 +60,43 @@ public class DayDisplayScript : MonoBehaviour{
         days2++;
         UpdateIncome();
         UpdateCalories();
-        if (playerData.calories.Owned >= playerData.caloriesNeededToBurn){
-            if (playerSetup.playerBodyType == 0){
-                playerSetup.playerBodyType = 1;
-            }
-            else if (playerSetup.playerBodyType == 1){
-                playerSetup.playerBodyType = 2;
-            }
-            else if (playerSetup.playerBodyType == 2){
-                playerSetup.playerBodyType = 3;
-            }
-            else if (playerSetup.playerBodyType == 3){
-                playerSetup.playerBodyType = 4;
-            }
-            else if (playerSetup.playerBodyType == 4){
-                playerSetup.playerBodyType = 4;
+        if (days2 >= 7){
+            if (playerData.calories.Owned >= playerData.caloriesNeededToBurn){
+                if (playerSetup.playerBodyType == 0){
+                    playerSetup.playerBodyType = 1;
+                }
+                else if (playerSetup.playerBodyType == 1){
+                    playerSetup.playerBodyType = 2;
+                }
+                else if (playerSetup.playerBodyType == 2){
+                    playerSetup.playerBodyType = 3;
+                }
+                else if (playerSetup.playerBodyType == 3){
+                    playerSetup.playerBodyType = 4;
+                }
+                else if (playerSetup.playerBodyType == 4){
+                    playerSetup.playerBodyType = 4;
+                }
+                playerData.calories.Owned = 0;
+            }else if (playerData.calories.Owned < playerData.caloriesNeededToBurn){
+                if (playerSetup.playerBodyType == 0){
+                    playerSetup.playerBodyType = 0;
+                }
+                else if (playerSetup.playerBodyType == 1){
+                    playerSetup.playerBodyType = 0;
+                }
+                else if (playerSetup.playerBodyType == 2){
+                    playerSetup.playerBodyType = 1;
+                }
+                else if (playerSetup.playerBodyType == 3){
+                    playerSetup.playerBodyType = 2;
+                }
+                else if (playerSetup.playerBodyType == 4){
+                    playerSetup.playerBodyType = 3;
+                }
+                playerData.calories.Owned = 0;
             }
             playerSetup.UpdateBodyType();
-        }
-        if (days2 >= 7){
             days2 = 0;
         }
         SetCurrentDay();

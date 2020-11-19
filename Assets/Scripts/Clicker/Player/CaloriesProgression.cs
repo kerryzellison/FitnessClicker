@@ -26,7 +26,7 @@ namespace Clicker.Player{
 
         void UpdateCounterAndCalories(){
             if (clickCounter >= 3){
-                playerData.burnedCalories.Owned += 300;
+                playerData.burnedCalories.Owned += 1000;
                 clickCounter = 0;
             } 
         }
