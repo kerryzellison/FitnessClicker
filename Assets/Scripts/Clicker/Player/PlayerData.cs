@@ -13,8 +13,10 @@ namespace Clicker.Player{
         public Resource burnedCalories;
         public Resource intakeCalories;
         public Resource income;
-        [SerializeField]
-        public int caloriesNeededToBurn;
+        public int caloriesNeededToBurn{
+            get => PlayerPrefs.GetInt("WeeklyCals", 0);
+            set => PlayerPrefs.SetInt("WeeklyCals", value);
+        }
         [SerializeField]
         public int dailyCalsNeedToBurn;
         private string PlayerName;

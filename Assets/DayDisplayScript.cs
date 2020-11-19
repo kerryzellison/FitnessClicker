@@ -64,35 +64,45 @@ public class DayDisplayScript : MonoBehaviour{
             if (playerData.calories.Owned >= playerData.caloriesNeededToBurn){
                 if (playerSetup.playerBodyType == 0){
                     playerSetup.playerBodyType = 1;
+                    playerSetup.updatedNeedBurnCals = 8400;
                 }
                 else if (playerSetup.playerBodyType == 1){
                     playerSetup.playerBodyType = 2;
+                    playerSetup.updatedNeedBurnCals = 16800;
                 }
                 else if (playerSetup.playerBodyType == 2){
                     playerSetup.playerBodyType = 3;
+                    playerSetup.updatedNeedBurnCals = 33600;
                 }
                 else if (playerSetup.playerBodyType == 3){
                     playerSetup.playerBodyType = 4;
+                    playerSetup.updatedNeedBurnCals = 67200;
                 }
                 else if (playerSetup.playerBodyType == 4){
                     playerSetup.playerBodyType = 4;
+                    playerSetup.updatedNeedBurnCals = 67200;
                 }
                 playerData.calories.Owned = 0;
             }else if (playerData.calories.Owned < playerData.caloriesNeededToBurn){
                 if (playerSetup.playerBodyType == 0){
                     playerSetup.playerBodyType = 0;
+                    playerSetup.updatedNeedBurnCals = 4200;
                 }
                 else if (playerSetup.playerBodyType == 1){
                     playerSetup.playerBodyType = 0;
+                    playerSetup.updatedNeedBurnCals = 4200;
                 }
                 else if (playerSetup.playerBodyType == 2){
                     playerSetup.playerBodyType = 1;
+                    playerSetup.updatedNeedBurnCals = 8400;
                 }
                 else if (playerSetup.playerBodyType == 3){
                     playerSetup.playerBodyType = 2;
+                    playerSetup.updatedNeedBurnCals = 16800;
                 }
                 else if (playerSetup.playerBodyType == 4){
                     playerSetup.playerBodyType = 3;
+                    playerSetup.updatedNeedBurnCals = 33600;
                 }
                 playerData.calories.Owned = 0;
             }
@@ -136,10 +146,15 @@ public class DayDisplayScript : MonoBehaviour{
     }
     void UpdateCalories(){
         playerData.calories.Owned += playerData.burnedCalories.Owned;
+        playerSetup.updatedNeedBurnCals -= playerData.burnedCalories.Owned;
         playerData.caloriesNeededToBurn -= playerData.burnedCalories.Owned;
+        if (playerSetup.updatedNeedBurnCals <= 0){
+            playerSetup.updatedNeedBurnCals = 0;
+        }
         if (playerData.caloriesNeededToBurn <= 0){
             playerData.caloriesNeededToBurn = 0;
         }
+        
         playerData.burnedCalories.Owned = 0;
     }
 }

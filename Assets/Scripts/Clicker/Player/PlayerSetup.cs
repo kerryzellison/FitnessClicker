@@ -38,6 +38,11 @@ namespace Clicker.Player{
             Athletic,
             Muscular
         }
+
+        public int updatedNeedBurnCals{
+            get => PlayerPrefs.GetInt("UpdatedCals", 4200);
+            set => PlayerPrefs.SetInt("UpdatedCals", value);
+        }
         
         public bool activePlayer;
         public int playerIsActive{
@@ -57,6 +62,12 @@ namespace Clicker.Player{
             InitiateStartTrainer();
             DisplayActiveTrainer();
         }
+
+        void CheckCalsDiff(){
+            if (playerData.caloriesNeededToBurn != updatedNeedBurnCals){
+                playerData.caloriesNeededToBurn = updatedNeedBurnCals;
+            }
+        }
         public void SwitchBodyType(BodyType bodyType){
             switch (bodyType){
                 //here we set the values needed for amount of burned calories and amount of intake calories etc.
@@ -64,6 +75,7 @@ namespace Clicker.Player{
                     characterSpriteDisplay.sprite = characterSprites[0];
                     bodyTypeText.text = "Body type: Class 2 obese";
                     playerData.caloriesNeededToBurn = 4200;
+                    CheckCalsDiff();
                     playerData.intakeCalories.Owned = 3000;
                     playerData.dailyCalsNeedToBurn = 300;
                     weightText.text = "Weight: 150kg";
@@ -73,6 +85,7 @@ namespace Clicker.Player{
                     characterSpriteDisplay.sprite = characterSprites[1];
                     bodyTypeText.text = "Body type: Class 1 obese";
                     playerData.caloriesNeededToBurn = 8400;
+                    CheckCalsDiff();
                     playerData.intakeCalories.Owned = 3000;
                     playerData.dailyCalsNeedToBurn = 600;
                     weightText.text = "Weight: 115kg";
@@ -82,6 +95,7 @@ namespace Clicker.Player{
                     characterSpriteDisplay.sprite = characterSprites[2];
                     bodyTypeText.text = "Body type: Average";
                     playerData.caloriesNeededToBurn = 16800;
+                    CheckCalsDiff();
                     playerData.intakeCalories.Owned = 4000;
                     playerData.dailyCalsNeedToBurn = 1200;
                     weightText.text = "Weight: 80kg";
@@ -92,6 +106,7 @@ namespace Clicker.Player{
                     characterSpriteDisplay.sprite = characterSprites[3];
                     bodyTypeText.text = "Body type: Athletic";
                     playerData.caloriesNeededToBurn = 33600;
+                    CheckCalsDiff();
                     playerData.intakeCalories.Owned = 8000;
                     playerData.dailyCalsNeedToBurn = 2400;
                     weightText.text = "Weight: 95kg";
@@ -101,6 +116,7 @@ namespace Clicker.Player{
                     characterSpriteDisplay.sprite = characterSprites[4];
                     bodyTypeText.text = "Body type: Muscular";
                     playerData.caloriesNeededToBurn = 67200;
+                    CheckCalsDiff();
                     playerData.intakeCalories.Owned = 16000;
                     playerData.dailyCalsNeedToBurn = 4800;
                     weightText.text = "Weight: 110kg";
@@ -182,6 +198,11 @@ namespace Clicker.Player{
             startPopup.SetActive(false);
         }
 
+        public void NewGame(){
+            PlayerPrefs.DeleteAll();
+            CheckForActivePlayer();
+            welcomeScreen.SetActive(false);
+        }
         public void QuitApplication(){
             Application.Quit();
         }
