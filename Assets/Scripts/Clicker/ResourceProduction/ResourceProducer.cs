@@ -31,6 +31,7 @@ namespace Clicker.ResourceProduction {
         void Update() {
             UpdateProduction();
             amount.Update();
+            UpdateActiveText();
         }
         void UpdateProduction() {
             this.elapsedTime += Time.deltaTime;

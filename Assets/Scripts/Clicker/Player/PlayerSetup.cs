@@ -53,6 +53,7 @@ namespace Clicker.Player{
             SwitchBodyType(savedBody);
             userName.text = playerData.playerName;
             InitiateStartTrainer();
+            DisplayActiveTrainer();
         }
         public void SwitchBodyType(BodyType bodyType){
             switch (bodyType){
@@ -149,7 +150,12 @@ namespace Clicker.Player{
             go.gameObject.GetComponent<ResourceProducer>().data = playerData.currentTrainer;
             go.gameObject.GetComponent<ResourceProducer>().gameObject.name = playerData.currentTrainer.name;
             go.gameObject.GetComponent<ResourceProducer>().UpdateActiveText();
-            playerData.usedTrainers.Add(playerData.currentTrainer.name);
+            if (playerData.usedTrainers.Contains(playerData.currentTrainer.name)){
+                Debug.Log("Trainer already in list");
+            }
+            else{
+                playerData.usedTrainers.Add(playerData.currentTrainer.name);
+            }
         }
         void CalculateBodyType(){
             //use this for calculating the body typ of the user depending on users total amount of calories.

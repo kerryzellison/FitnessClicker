@@ -17,9 +17,9 @@ namespace Clicker.Player{
         public Text IncomeText;
 
         public void SetStartupValues(){
+            playerData.currentTrainer = playerSetup.starterTrainer;
             playerData.usedTrainers.Clear();
             playerData.usedTrainers.Add(playerSetup.starterTrainer.name);
-            playerData.currentTrainer = playerSetup.starterTrainer;
             playerData.calories.Owned = caloriesStartAmount;
             playerData.burnedCalories.Owned = burnedCaloriesStartAmount;
             playerData.money.Owned = startingMoneyAmount;
@@ -32,7 +32,6 @@ namespace Clicker.Player{
             playerSetup.SwitchBodyType(PlayerSetup.BodyType.Obese2);
             playerData.income.Owned = 1000;
             IncomeText.text = $"Income; {playerData.income.Owned}";
-            playerSetup.InitiateStartTrainer();
         }
     }
 }
