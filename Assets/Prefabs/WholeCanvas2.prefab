@@ -166,8 +166,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -168, y: -76}
-  m_SizeDelta: {x: 605.963, y: 859.76245}
+  m_AnchoredPosition: {x: -82.1, y: -0.00029373}
+  m_SizeDelta: {x: 1126.4, y: 900.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &518325579955946733
 CanvasRenderer:
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 745291fef9a8520428d5eee9da172b06, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e20e5c54d28549b40a103a461cfd6e67, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4961,6 +4961,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3586017662356181088}
+        m_TargetAssemblyTypeName: Clicker.Player.CaloriesProgression, Assembly-CSharp
+        m_MethodName: ResetProgressionBar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3586017662230054088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5450,10 +5462,10 @@ MonoBehaviour:
   clickCounter: 0
   progressBar: {fileID: 2382909235090721623}
   characterSprites:
-  - {fileID: 21300000, guid: 745291fef9a8520428d5eee9da172b06, type: 3}
-  - {fileID: 21300000, guid: bae9ceb7b928a6e4897c76588210ca33, type: 3}
-  - {fileID: 21300000, guid: 745291fef9a8520428d5eee9da172b06, type: 3}
-  - {fileID: 21300000, guid: bae9ceb7b928a6e4897c76588210ca33, type: 3}
+  - {fileID: 21300000, guid: ba970ff7385504b79a76a36f27fbece3, type: 3}
+  - {fileID: 21300000, guid: 900bdcdde809545a5bd6515bed30028a, type: 3}
+  - {fileID: 21300000, guid: 672e421db19834ed8a91f1b451637a10, type: 3}
+  - {fileID: 21300000, guid: 900bdcdde809545a5bd6515bed30028a, type: 3}
   characterSprites1:
   - {fileID: 21300000, guid: e20e5c54d28549b40a103a461cfd6e67, type: 3}
   - {fileID: 21300000, guid: 7a46654552ad7b942b372bf6fbe80e08, type: 3}

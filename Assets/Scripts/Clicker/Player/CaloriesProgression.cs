@@ -40,6 +40,11 @@ namespace Clicker.Player{
             OnclickUpdate();
         }
 
+        public void ResetProgressionBar(){
+            clickCounter = 0;
+            progressBar.SetProgress(clickCounter);
+        }
+
         public void OnclickUpdate(){
             if (playerSetup.playerBodyType == 0){
                 renderer.sprite = characterSprites[clickCounter];
