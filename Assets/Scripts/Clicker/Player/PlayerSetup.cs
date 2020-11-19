@@ -64,27 +64,27 @@ namespace Clicker.Player{
                     characterSpriteDisplay.sprite = characterSprites[0];
                     bodyTypeText.text = "Body type: Class 2 obese";
                     playerData.caloriesNeededToBurn = 4200;
-                    playerData.intakeCalories.Owned = 600;
+                    playerData.intakeCalories.Owned = 3000;
                     playerData.dailyCalsNeedToBurn = 300;
-                    weightText.text = "Weight: 150";
+                    weightText.text = "Weight: 150kg";
                     playerBodyType = (int) BodyType.Obese2;
                     break;
                 case BodyType.Obese1:
                     characterSpriteDisplay.sprite = characterSprites[1];
                     bodyTypeText.text = "Body type: Class 1 obese";
                     playerData.caloriesNeededToBurn = 8400;
-                    playerData.intakeCalories.Owned = 1200;
+                    playerData.intakeCalories.Owned = 3000;
                     playerData.dailyCalsNeedToBurn = 600;
-                    weightText.text = "Weight: 115";
+                    weightText.text = "Weight: 115kg";
                     playerBodyType = (int) BodyType.Obese1;
                     break;
                 case BodyType.Average:
                     characterSpriteDisplay.sprite = characterSprites[2];
                     bodyTypeText.text = "Body type: Average";
                     playerData.caloriesNeededToBurn = 16800;
-                    playerData.intakeCalories.Owned = 2400;
+                    playerData.intakeCalories.Owned = 4000;
                     playerData.dailyCalsNeedToBurn = 1200;
-                    weightText.text = "Weight: 80";
+                    weightText.text = "Weight: 80kg";
                     playerBodyType = (int) BodyType.Average;
                     break;
                 
@@ -92,18 +92,18 @@ namespace Clicker.Player{
                     characterSpriteDisplay.sprite = characterSprites[3];
                     bodyTypeText.text = "Body type: Athletic";
                     playerData.caloriesNeededToBurn = 33600;
-                    playerData.intakeCalories.Owned = 4800;
+                    playerData.intakeCalories.Owned = 8000;
                     playerData.dailyCalsNeedToBurn = 2400;
-                    weightText.text = "Weight: 95";
+                    weightText.text = "Weight: 95kg";
                     playerBodyType = (int) BodyType.Athletic;
                     break;
                 case BodyType.Muscular:
                     characterSpriteDisplay.sprite = characterSprites[4];
                     bodyTypeText.text = "Body type: Muscular";
                     playerData.caloriesNeededToBurn = 67200;
-                    playerData.intakeCalories.Owned = 9600;
+                    playerData.intakeCalories.Owned = 16000;
                     playerData.dailyCalsNeedToBurn = 4800;
-                    weightText.text = "Weight: 110";
+                    weightText.text = "Weight: 110kg";
                     playerBodyType = (int) BodyType.Muscular;
                     break;
             }
@@ -183,6 +183,9 @@ namespace Clicker.Player{
             if(activePlayer) startPopup.SetActive(false);
         }
         public void SubmitUserName(){
+            if (inputField.text == ""){
+                return;
+            }
             playerIsActive = 1;
             playerData.playerName = inputField.text;
             startPopup.SetActive(false);

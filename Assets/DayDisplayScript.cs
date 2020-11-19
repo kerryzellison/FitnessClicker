@@ -38,7 +38,7 @@ public class DayDisplayScript : MonoBehaviour{
         if (timeSpan.Days == 1){
             resetTimer();
         }
-        timeText.text = $"Time - {timeSpan}";
+        timeText.text = $"Time of day: {timeSpan}";
         if (playerData.burnedCalories.Owned < playerData.dailyCalsNeedToBurn){
             var colorBlock = endDayButton.colors;
             colorBlock.normalColor = Color.red;

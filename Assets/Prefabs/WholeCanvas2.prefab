@@ -4949,6 +4949,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3586017662356181088}
+        m_TargetAssemblyTypeName: Clicker.Player.CaloriesProgression, Assembly-CSharp
+        m_MethodName: OnclickUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3586017662230054088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5258,6 +5270,7 @@ MonoBehaviour:
   dailyCalsNeedBurn: {fileID: 1337929267394612190}
   userName: {fileID: 3586017661827541625}
   savedBody: 0
+  result: 0
   activePlayer: 0
 --- !u!114 &3586017662328816299
 MonoBehaviour:
@@ -5433,33 +5446,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 70caaa7370b0241d5be96404eef2305f, type: 2}
+  playerSetup: {fileID: 3586017662328816298}
   clickCounter: 0
   progressBar: {fileID: 2382909235090721623}
-  CharacterSprites:
+  characterSprites:
   - {fileID: 21300000, guid: 745291fef9a8520428d5eee9da172b06, type: 3}
   - {fileID: 21300000, guid: bae9ceb7b928a6e4897c76588210ca33, type: 3}
   - {fileID: 21300000, guid: 745291fef9a8520428d5eee9da172b06, type: 3}
   - {fileID: 21300000, guid: bae9ceb7b928a6e4897c76588210ca33, type: 3}
-  characterSprite1:
+  characterSprites1:
   - {fileID: 21300000, guid: e20e5c54d28549b40a103a461cfd6e67, type: 3}
   - {fileID: 21300000, guid: 7a46654552ad7b942b372bf6fbe80e08, type: 3}
   - {fileID: 21300000, guid: 6258f223bf358fe479bebb06a9af4f95, type: 3}
-  - {fileID: 21300000, guid: e20e5c54d28549b40a103a461cfd6e67, type: 3}
-  characterSprite2:
+  - {fileID: 21300000, guid: 7a46654552ad7b942b372bf6fbe80e08, type: 3}
+  characterSprites2:
   - {fileID: 21300000, guid: c9a65dbc44bfb99409f98b088adaca6a, type: 3}
   - {fileID: 21300000, guid: c80687770bdcdff4297f44bc1e2594f5, type: 3}
   - {fileID: 21300000, guid: 8d67e275fb36db040985c20df09a0cca, type: 3}
-  - {fileID: 21300000, guid: c9a65dbc44bfb99409f98b088adaca6a, type: 3}
-  characterSprite3:
+  - {fileID: 21300000, guid: c80687770bdcdff4297f44bc1e2594f5, type: 3}
+  characterSprites3:
   - {fileID: 21300000, guid: 79643077ee8518f4c813f8d04855f287, type: 3}
   - {fileID: 21300000, guid: c6f1c93a3001aa3479678c9e83246561, type: 3}
   - {fileID: 21300000, guid: dff73cd5b18566645aea4138a3a5ea4f, type: 3}
-  - {fileID: 21300000, guid: 79643077ee8518f4c813f8d04855f287, type: 3}
-  characterSprite4:
+  - {fileID: 21300000, guid: c6f1c93a3001aa3479678c9e83246561, type: 3}
+  characterSprites4:
   - {fileID: 21300000, guid: 17f70861983f4ae419c56c59eb89a063, type: 3}
   - {fileID: 21300000, guid: 712e4df8149c25d49b7831c5e040bd11, type: 3}
   - {fileID: 21300000, guid: 0315ccf3aaf5bb34b86a0c90458a3bb3, type: 3}
-  - {fileID: 21300000, guid: 17f70861983f4ae419c56c59eb89a063, type: 3}
+  - {fileID: 21300000, guid: 712e4df8149c25d49b7831c5e040bd11, type: 3}
   renderer: {fileID: 518325579955946732}
 --- !u!82 &2027635707023262994
 AudioSource:
@@ -5729,7 +5743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1784948527277090736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5958,7 +5972,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 0
-  m_CharacterLimit: 0
+  m_CharacterLimit: 8
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []

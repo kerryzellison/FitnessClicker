@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class InputName : MonoBehaviour
 {
-
     public string theName;
     public GameObject inputField;
     public GameObject textDisplay;

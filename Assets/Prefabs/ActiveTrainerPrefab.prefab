@@ -157,7 +157,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Current trainer.
+  m_Text: 'Jennie:
+
+
+    burns 10 calories each minute.'
 --- !u!1 &8094193962084391292
 GameObject:
   m_ObjectHideFlags: 0

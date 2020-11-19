@@ -42,14 +42,14 @@ namespace Clicker.ResourceProduction {
         }
 
         public void UpdateActiveText(){
-            this.ActiveLabel.text = $"<color=#ffffff><size=50>{this.data.name}:</size></color> \n" +
-                                    $"<color=#000000><size=30>Burns {this.data.GetProductionAmount()} calorie each {this.data.productionTime / 60} minute.</size></color>";
+            this.ActiveLabel.text = $"<color=#FDFF00><size=50>{this.data.name}:</size></color> \n" +
+                                    $"<color=#323232><size=35>Burns {this.data.GetProductionAmount()} calories\neach minute</size></color>\n" +
+                                    $"<color=#FDFF00><size=45>Price was: {this.data.GetActualCosts()}</size></color>";
         }
-
         public override string ToString(){
-            return $"<color=#ffffff><size=45>{this.data.name}:</size></color> \n" +
-                   $"<color=#000000><size=35>Burns {this.data.GetProductionAmount()} calorie each {this.data.productionTime / 60} minute</size></color>\n" +
-                   $"<color=#ffffff><size=40>Costs: {this.data.GetActualCosts()}</size></color>";
+            return $"<color=#FDFF00><size=45>{this.data.name}:</size></color> \n" +
+                   $"<color=#323232><size=35>Burns {this.data.GetProductionAmount()} calories each minute</size></color>\n" +
+                   $"<color=#FDFF00><size=40>Costs: {this.data.GetActualCosts()}</size></color>";
         }
 
         public void DestroyThisResourceProducer(){
