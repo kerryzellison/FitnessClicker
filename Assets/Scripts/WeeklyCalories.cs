@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class WeeklyCalories : MonoBehaviour
 {
+    /*
     public int DayCounter;
     public Text ThisWeekCaloriesText;
     int WeeklyCaloriesAmount;
@@ -28,6 +29,7 @@ public class WeeklyCalories : MonoBehaviour
 
         }
     }
+    */
     
     
 }

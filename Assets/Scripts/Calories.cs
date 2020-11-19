@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Calories : MonoBehaviour
 {
-    public Text caloriesAmount;
+    /*public Text caloriesAmount;
     public int calories;
     public int clickCounter = 0;
 
@@ -22,5 +22,5 @@ public class Calories : MonoBehaviour
     public void Click()
     {
         clickCounter++;   // adds 1 to the counter so the scripts know how much the player has pressed
-    }
+    }*/
 }

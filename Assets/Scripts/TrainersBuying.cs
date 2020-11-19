@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TrainersBuying : MonoBehaviour
 {
-   GameObject HolderForTrainerCards;
+   /*GameObject HolderForTrainerCards;
    GameObject g;
    [SerializeField] private Transform ShopScrollView;
 
@@ -19,5 +19,5 @@ public class TrainersBuying : MonoBehaviour
        }
        Destroy(HolderForTrainerCards);
        
-   }    
-   }
+   }   */ 
+}

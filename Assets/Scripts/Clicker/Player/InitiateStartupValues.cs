@@ -11,27 +11,28 @@ namespace Clicker.Player{
         public int startingMoneyAmount;
         public int startingIntakeCalories;
         public Text moneyText;
-        public Text bodyTypeText;
         public Text currentBurnedCalories;
         public Text usernameText;
         public Text intakeCaloriesText;
         public Text IncomeText;
 
         public void SetStartupValues(){
+            playerData.usedTrainers.Clear();
+            playerData.usedTrainers.Add(playerSetup.starterTrainer.name);
+            playerData.currentTrainer = playerSetup.starterTrainer;
             playerData.calories.Owned = caloriesStartAmount;
             playerData.burnedCalories.Owned = burnedCaloriesStartAmount;
             playerData.money.Owned = startingMoneyAmount;
-            playerData.intakeCalories.Owned = startingIntakeCalories;
-            dayDisplayScript.days = 1;
+            //playerData.intakeCalories.Owned = startingIntakeCalories;
             dayDisplayScript.startTime = dayDisplayScript.timerScript.GetEpochTimeMilliseconds();
             moneyText.text = $"Money: {startingMoneyAmount}";
-            //bodyTypeText.text = $"Body type: Undecided";
             currentBurnedCalories.text = $"Todays calories burned: {burnedCaloriesStartAmount}";
             usernameText.text = playerData.playerName;
             intakeCaloriesText.text = $"Todays calories intake: {intakeCaloriesText}";
             playerSetup.SwitchBodyType(PlayerSetup.BodyType.Obese2);
             playerData.income.Owned = 1000;
             IncomeText.text = $"Income; {playerData.income.Owned}";
+            playerSetup.InitiateStartTrainer();
         }
     }
 }

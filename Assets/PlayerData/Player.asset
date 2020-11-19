@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37260573413394da1bc442208164c67d, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  currentTrainer: {fileID: 0}
+  currentTrainer: {fileID: 11400000, guid: ce28e967547ca4033b6dd9d8e013b10b, type: 2}
   money: {fileID: 11400000, guid: 0b8b688a461364e5590aec36aa4f9eb5, type: 2}
   calories: {fileID: 11400000, guid: 687c80eb927bc4d92be9fb8a1cd83dba, type: 2}
   burnedCalories: {fileID: 11400000, guid: 7603efcb5591d485f93c23f6f64a5557, type: 2}
   intakeCalories: {fileID: 11400000, guid: 678aa8925bd594986b3721b3e055d912, type: 2}
   income: {fileID: 11400000, guid: e3f76c3b0d59346fc9c6fae2d4eca7fd, type: 2}
-  caloriesNeededToBurn: 20752
-  playerName: HankTheShank
+  caloriesNeededToBurn: 0
+  playerName: fred
+  usedTrainers:
+  - StarterTrainer

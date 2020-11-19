@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class CaloriesBurned : MonoBehaviour
 {
-    public Text caloriesBurned;
+    /*public Text caloriesBurned;
     public int caloriesMain;
     public Calories calories;
     public void Update()
@@ -11,5 +11,5 @@ public class CaloriesBurned : MonoBehaviour
         caloriesMain = calories.calories;
         caloriesBurned.text = "Todays Calories Burned: " + caloriesMain ;
         
-    }
+    }*/
 }

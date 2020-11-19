@@ -24,10 +24,11 @@ namespace Clicker.Player{
         public Text needToBurnText;
         public Text weightText;
         public Sprite[] characterSprites;
-        public GameObject characterSpriteDisplay;
+        public Image characterSpriteDisplay;
         public Text trainerPopUpIncomeText;
         public Text caloriesBurnedGymText;
         public Text userName;
+        public BodyType savedBody;
         public enum BodyType{
             Obese2,
             Obese1,
@@ -47,23 +48,17 @@ namespace Clicker.Player{
             set => PlayerPrefs.SetInt("ActiveBody", value);
         }
         void Start(){
-            playerData.currentTrainer = this.starterTrainer;
-            playerData.usedTrainers.Add(starterTrainer.name);
             CheckForActivePlayer();
-            BodyType savedBody = (BodyType) playerBodyType;
+            savedBody = (BodyType) playerBodyType;
             SwitchBodyType(savedBody);
             userName.text = playerData.playerName;
-            if (playerData.currentTrainer != null){
-                activeProducer.SetUp();
-                var go = GameObject.FindWithTag("ActiveTrainer");
-                go.GetComponent<ResourceProducer>().amount.Amount = 1;
-            }
+            InitiateStartTrainer();
         }
         public void SwitchBodyType(BodyType bodyType){
             switch (bodyType){
                 //here we set the values needed for amount of burned calories and amount of intake calories etc.
                 case BodyType.Obese2:
-                    //characterSpriteDisplay.GetComponent<SpriteRenderer>().sprite = characterSprites[0];
+                    characterSpriteDisplay.sprite = characterSprites[0];
                     bodyTypeText.text = "Body type: Class 2 obese";
                     playerData.caloriesNeededToBurn = 4200;
                     playerData.intakeCalories.Owned = 600;
@@ -71,7 +66,7 @@ namespace Clicker.Player{
                     playerBodyType = (int) BodyType.Obese2;
                     break;
                 case BodyType.Obese1:
-                    characterSpriteDisplay.GetComponent<SpriteRenderer>().sprite = characterSprites[1];
+                    characterSpriteDisplay.sprite = characterSprites[1];
                     bodyTypeText.text = "Body type: Class 1 obese";
                     playerData.caloriesNeededToBurn = 1200;
                     playerData.intakeCalories.Owned = 1200;
@@ -79,7 +74,7 @@ namespace Clicker.Player{
                     playerBodyType = (int) BodyType.Obese1;
                     break;
                 case BodyType.Average:
-                    characterSpriteDisplay.GetComponent<SpriteRenderer>().sprite = characterSprites[2];
+                    characterSpriteDisplay.sprite = characterSprites[2];
                     bodyTypeText.text = "Body type: Average";
                     playerData.caloriesNeededToBurn = 2400;
                     playerData.intakeCalories.Owned = 2400;
@@ -88,7 +83,7 @@ namespace Clicker.Player{
                     break;
                 
                 case BodyType.Athletic:
-                    characterSpriteDisplay.GetComponent<SpriteRenderer>().sprite = characterSprites[3];
+                    characterSpriteDisplay.sprite = characterSprites[3];
                     bodyTypeText.text = "Body type: Athletic";
                     playerData.caloriesNeededToBurn = 4800;
                     playerData.intakeCalories.Owned = 4800;
@@ -96,7 +91,7 @@ namespace Clicker.Player{
                     playerBodyType = (int) BodyType.Athletic;
                     break;
                 case BodyType.Muscular:
-                    characterSpriteDisplay.GetComponent<SpriteRenderer>().sprite = characterSprites[4];
+                    characterSpriteDisplay.sprite = characterSprites[4];
                     bodyTypeText.text = "Body type: Muscular";
                     playerData.caloriesNeededToBurn = 9600;
                     playerData.intakeCalories.Owned = 9600;
@@ -124,6 +119,18 @@ namespace Clicker.Player{
             }
         }
 
+        public void UpdateBodyType(){
+            savedBody = (BodyType) playerBodyType;
+            SwitchBodyType(savedBody);
+        }
+        public void InitiateStartTrainer(){
+            if (playerData.currentTrainer != null){
+                activeProducer.SetUp();
+                var go = GameObject.FindWithTag("ActiveTrainer");
+                go.GetComponent<ResourceProducer>().amount.Amount = 1;
+            }
+        }
+
         private void Update(){
             caloriesBurnedGymText.text = $"Calories burned:{playerData.burnedCalories.Owned} ";
             trainerPopUpIncomeText.text = $"Savings: {playerData.money.Owned}";
@@ -142,6 +149,7 @@ namespace Clicker.Player{
             go.gameObject.GetComponent<ResourceProducer>().data = playerData.currentTrainer;
             go.gameObject.GetComponent<ResourceProducer>().gameObject.name = playerData.currentTrainer.name;
             go.gameObject.GetComponent<ResourceProducer>().UpdateActiveText();
+            playerData.usedTrainers.Add(playerData.currentTrainer.name);
         }
         void CalculateBodyType(){
             //use this for calculating the body typ of the user depending on users total amount of calories.

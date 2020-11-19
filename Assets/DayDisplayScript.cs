@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class DayDisplayScript : MonoBehaviour{
     public DaySystemScript timerScript;
+    public PlayerSetup playerSetup;
     public PlayerData playerData;
     public Button endDayButton;
     public long startTime;
@@ -15,13 +16,18 @@ public class DayDisplayScript : MonoBehaviour{
     public Text weekDaysText;
     public long milliseconds;
     public int seconds;
-    public int days = 1;
+    [SerializeField]
     private TimeSpan timeSpan;
     public int days2 = 0;
 
+    public int Days{
+        get => PlayerPrefs.GetInt("Days", 1);
+        set => PlayerPrefs.SetInt("Days", value);
+    }
+
     public void Start(){
         startTime = timerScript.GetEpochTimeMilliseconds();
-        numberOfDays.text = $"You have been a member for: {days} days";
+        numberOfDays.text = $"You have been a member for: {Days} days";
         days2 = 0;
         SetCurrentDay();
     }
@@ -33,18 +39,50 @@ public class DayDisplayScript : MonoBehaviour{
             resetTimer();
         }
         timeText.text = $"Time - {timeSpan}";
+        if (playerData.burnedCalories.Owned < playerData.intakeCalories.Owned){
+            var colorBlock = endDayButton.colors;
+            colorBlock.normalColor = Color.red;
+            colorBlock.highlightedColor = Color.gray;
+            colorBlock.pressedColor = Color.gray;
+            endDayButton.colors = colorBlock;
+        }
+        else{
+            var colorBlock = endDayButton.colors;
+            colorBlock.normalColor = Color.green;
+            colorBlock.highlightedColor = Color.green;
+            colorBlock.pressedColor = Color.green;
+            endDayButton.colors = colorBlock;
+        }
     }
     void resetTimer(){
         startTime = timerScript.GetEpochTimeMilliseconds();
-        days++;
+        Days += 1;
         days2++;
         UpdateIncome();
         UpdateCalories();
+        if (playerData.calories.Owned >= playerData.caloriesNeededToBurn){
+            if (playerSetup.playerBodyType == 0){
+                playerSetup.playerBodyType = 1;
+            }
+            else if (playerSetup.playerBodyType == 1){
+                playerSetup.playerBodyType = 2;
+            }
+            else if (playerSetup.playerBodyType == 2){
+                playerSetup.playerBodyType = 3;
+            }
+            else if (playerSetup.playerBodyType == 3){
+                playerSetup.playerBodyType = 4;
+            }
+            else if (playerSetup.playerBodyType == 4){
+                playerSetup.playerBodyType = 4;
+            }
+            playerSetup.UpdateBodyType();
+        }
         if (days2 >= 7){
             days2 = 0;
         }
         SetCurrentDay();
-        numberOfDays.text = $"You have been a member for: {days} days";
+        numberOfDays.text = $"You have been a member for: {Days} days";
     }
 
     void SetCurrentDay(){
@@ -67,13 +105,12 @@ public class DayDisplayScript : MonoBehaviour{
     public void ResetDay(){
         if (playerData.burnedCalories.Owned < playerData.intakeCalories.Owned){
             var colorBlock = endDayButton.colors;
+            colorBlock.normalColor = Color.red;
+            colorBlock.highlightedColor = Color.gray;
             colorBlock.pressedColor = Color.gray;
             endDayButton.colors = colorBlock;
             return;
         }
-        var colorBlock2 = endDayButton.colors;
-        colorBlock2.pressedColor = Color.green;
-        endDayButton.colors = colorBlock2;
         resetTimer();
     }
     public void UpdateIncome(){
