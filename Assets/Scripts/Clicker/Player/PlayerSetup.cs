@@ -201,6 +201,7 @@ namespace Clicker.Player{
         public void NewGame(){
             PlayerPrefs.DeleteAll();
             CheckForActivePlayer();
+            dayDisplayScript.Days = 1;
             welcomeScreen.SetActive(false);
         }
         public void QuitApplication(){
