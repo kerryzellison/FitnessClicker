@@ -5192,6 +5192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerScript: {fileID: 3586017662328816297}
+  playerSetup: {fileID: 3586017662328816298}
   playerData: {fileID: 11400000, guid: 70caaa7370b0241d5be96404eef2305f, type: 2}
   endDayButton: {fileID: 3586017660589797630}
   startTime: 0
@@ -5200,7 +5201,6 @@ MonoBehaviour:
   weekDaysText: {fileID: 3586017661293082796}
   milliseconds: 0
   seconds: 0
-  days: 0
   days2: 0
 --- !u!114 &3586017662328816298
 MonoBehaviour:
@@ -5230,11 +5230,17 @@ MonoBehaviour:
   bodyTypeText: {fileID: 3586017661181028527}
   needToBurnText: {fileID: 3586017660680508212}
   weightText: {fileID: 3586017661453853803}
-  characterSprites: []
-  characterSpriteDisplay: {fileID: 3586017662370444680}
+  characterSprites:
+  - {fileID: 21300000, guid: a89dddc213f37cc40b4523421deb6633, type: 3}
+  - {fileID: 21300000, guid: 3d88577d5997740e18397519f28a0971, type: 3}
+  - {fileID: 21300000, guid: 7a04ebde4dcd9f54f98cc557e1a5342a, type: 3}
+  - {fileID: 21300000, guid: b0404f57792a69548b88a02ba7fa7037, type: 3}
+  - {fileID: 21300000, guid: 6b4b8650dba3f460aadfba7462b804c8, type: 3}
+  characterSpriteDisplay: {fileID: 3586017662370444682}
   trainerPopUpIncomeText: {fileID: 7576732279878457630}
   caloriesBurnedGymText: {fileID: 3586017660799147122}
   userName: {fileID: 3586017661827541625}
+  savedBody: 0
   activePlayer: 0
 --- !u!114 &3586017662328816299
 MonoBehaviour:
