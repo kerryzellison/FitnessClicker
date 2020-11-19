@@ -27,8 +27,10 @@ namespace Clicker.Player{
         public Image characterSpriteDisplay;
         public Text trainerPopUpIncomeText;
         public Text caloriesBurnedGymText;
+        public Text dailyCalsNeedBurn;
         public Text userName;
         public BodyType savedBody;
+        public int result;
         public enum BodyType{
             Obese2,
             Obese1,
@@ -63,6 +65,7 @@ namespace Clicker.Player{
                     bodyTypeText.text = "Body type: Class 2 obese";
                     playerData.caloriesNeededToBurn = 4200;
                     playerData.intakeCalories.Owned = 600;
+                    playerData.dailyCalsNeedToBurn = 300;
                     weightText.text = "Weight: 150";
                     playerBodyType = (int) BodyType.Obese2;
                     break;
@@ -71,6 +74,7 @@ namespace Clicker.Player{
                     bodyTypeText.text = "Body type: Class 1 obese";
                     playerData.caloriesNeededToBurn = 8400;
                     playerData.intakeCalories.Owned = 1200;
+                    playerData.dailyCalsNeedToBurn = 600;
                     weightText.text = "Weight: 115";
                     playerBodyType = (int) BodyType.Obese1;
                     break;
@@ -79,6 +83,7 @@ namespace Clicker.Player{
                     bodyTypeText.text = "Body type: Average";
                     playerData.caloriesNeededToBurn = 16800;
                     playerData.intakeCalories.Owned = 2400;
+                    playerData.dailyCalsNeedToBurn = 1200;
                     weightText.text = "Weight: 80";
                     playerBodyType = (int) BodyType.Average;
                     break;
@@ -88,6 +93,7 @@ namespace Clicker.Player{
                     bodyTypeText.text = "Body type: Athletic";
                     playerData.caloriesNeededToBurn = 33600;
                     playerData.intakeCalories.Owned = 4800;
+                    playerData.dailyCalsNeedToBurn = 2400;
                     weightText.text = "Weight: 95";
                     playerBodyType = (int) BodyType.Athletic;
                     break;
@@ -96,6 +102,7 @@ namespace Clicker.Player{
                     bodyTypeText.text = "Body type: Muscular";
                     playerData.caloriesNeededToBurn = 67200;
                     playerData.intakeCalories.Owned = 9600;
+                    playerData.dailyCalsNeedToBurn = 4800;
                     weightText.text = "Weight: 110";
                     playerBodyType = (int) BodyType.Muscular;
                     break;
@@ -133,13 +140,18 @@ namespace Clicker.Player{
         }
 
         private void Update(){
+            result = playerData.dailyCalsNeedToBurn - playerData.burnedCalories.Owned;
+            if (result < 0){
+                result = 0;
+            }
+            dailyCalsNeedBurn.text = $"To end day: Burn {result} more calories!";
             caloriesBurnedGymText.text = $"Calories burned:{playerData.burnedCalories.Owned} ";
             trainerPopUpIncomeText.text = $"Savings: {playerData.money.Owned}";
             caloriesBurnedText.text = $"Todays burned calories: {playerData.burnedCalories.Owned}";
             caloriesIntakeText.text = $"Todays calories intake: {playerData.intakeCalories.Owned}";
             savingsText.text = $"Savings: {playerData.money.Owned}";
             incomeText.text = $"Income: {playerData.income.Owned}";
-            needToBurnText.text = $"You need to burn {playerData.caloriesNeededToBurn + playerData.intakeCalories.Owned} calories in order to advance.";
+            needToBurnText.text = $"You need to burn {playerData.caloriesNeededToBurn} calories in order to advance.";
             if (dayDisplayScript.days2 == 7){
                 // one week has passed and do the necessary calculations here.
             }

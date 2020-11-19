@@ -14,6 +14,7 @@ namespace Clicker.Player{
         public Resource intakeCalories;
         public Resource income;
         public int caloriesNeededToBurn;
+        public int dailyCalsNeedToBurn;
         public string playerName;
         public List<string> usedTrainers;
     }

@@ -39,7 +39,7 @@ public class DayDisplayScript : MonoBehaviour{
             resetTimer();
         }
         timeText.text = $"Time - {timeSpan}";
-        if (playerData.burnedCalories.Owned < playerData.intakeCalories.Owned){
+        if (playerData.burnedCalories.Owned < playerData.dailyCalsNeedToBurn){
             var colorBlock = endDayButton.colors;
             colorBlock.normalColor = Color.red;
             colorBlock.highlightedColor = Color.gray;
@@ -121,7 +121,7 @@ public class DayDisplayScript : MonoBehaviour{
         }
     }
     public void ResetDay(){
-        if (playerData.burnedCalories.Owned < playerData.intakeCalories.Owned){
+        if (playerData.burnedCalories.Owned < playerData.dailyCalsNeedToBurn){
             var colorBlock = endDayButton.colors;
             colorBlock.normalColor = Color.red;
             colorBlock.highlightedColor = Color.gray;
@@ -135,19 +135,11 @@ public class DayDisplayScript : MonoBehaviour{
         playerData.money.Owned += 1000;
     }
     void UpdateCalories(){
-        if (playerData.burnedCalories.Owned >= playerData.intakeCalories.Owned){
-            var burnedCalories = playerData.burnedCalories.Owned - playerData.intakeCalories.Owned;
-            playerData.calories.Owned += burnedCalories;
-            playerData.caloriesNeededToBurn -= burnedCalories;
-            if (playerData.caloriesNeededToBurn <= 0){
-                playerData.caloriesNeededToBurn = 0;
-            }
-            playerData.burnedCalories.Owned = 0;
-        }else if (playerData.burnedCalories.Owned <= playerData.intakeCalories.Owned){
-            var burnedCalories = playerData.intakeCalories.Owned - playerData.burnedCalories.Owned;
-            playerData.calories.Owned += burnedCalories;
-            playerData.caloriesNeededToBurn += burnedCalories;
-            playerData.burnedCalories.Owned = 0;
+        playerData.calories.Owned += playerData.burnedCalories.Owned;
+        playerData.caloriesNeededToBurn -= playerData.burnedCalories.Owned;
+        if (playerData.caloriesNeededToBurn <= 0){
+            playerData.caloriesNeededToBurn = 0;
         }
+        playerData.burnedCalories.Owned = 0;
     }
 }
