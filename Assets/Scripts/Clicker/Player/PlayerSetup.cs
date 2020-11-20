@@ -9,6 +9,7 @@ namespace Clicker.Player{
     public class PlayerSetup : MonoBehaviour{
         public PlayerData playerData;
         public Data starterTrainer;
+        public Data resetStarterTrainer;
         public PlayersActiveProducer activeProducer;
         public DayDisplayScript dayDisplayScript;
         public InputField inputField;
@@ -59,8 +60,6 @@ namespace Clicker.Player{
             savedBody = (BodyType) playerBodyType;
             SwitchBodyType(savedBody);
             userName.text = playerData.playerName;
-            InitiateStartTrainer();
-            DisplayActiveTrainer();
         }
 
         void CheckCalsDiff(){
@@ -93,7 +92,7 @@ namespace Clicker.Player{
                     break;
                 case BodyType.Average:
                     characterSpriteDisplay.sprite = characterSprites[2];
-                    bodyTypeText.text = "Body type: Average";
+                    bodyTypeText.text = $"Body type: Average {playerData.playerName}";
                     playerData.caloriesNeededToBurn = 16800;
                     CheckCalsDiff();
                     playerData.intakeCalories.Owned = 4000;
@@ -150,8 +149,13 @@ namespace Clicker.Player{
         public void InitiateStartTrainer(){
             if (playerData.currentTrainer != null){
                 activeProducer.SetUp();
-                var go = GameObject.FindWithTag("ActiveTrainer");
-                go.GetComponent<ResourceProducer>().amount.Amount = 1;
+                foreach (Transform child in activeProducer.transform){
+                    if (child.gameObject.GetComponent<ResourceProducer>() != null){
+                        child.GetComponent<ResourceProducer>().amount.Amount = 1;
+                    }
+                }
+               // var go = GameObject.FindWithTag("ActiveTrainer");
+               // go.GetComponent<ResourceProducer>().amount.Amount = 1;
             }
         }
 
@@ -187,7 +191,11 @@ namespace Clicker.Player{
         }
         public void ClickStartButton(){
             welcomeScreen.SetActive(false);
-            if(activePlayer) startPopup.SetActive(false);
+            if (activePlayer){
+                InitiateStartTrainer();
+                DisplayActiveTrainer();
+                startPopup.SetActive(false);
+            }
         }
         public void SubmitUserName(){
             if (inputField.text == ""){
@@ -196,12 +204,16 @@ namespace Clicker.Player{
             playerIsActive = 1;
             playerData.playerName = inputField.text;
             startPopup.SetActive(false);
+            InitiateStartTrainer();
+            DisplayActiveTrainer();
         }
 
         public void NewGame(){
             PlayerPrefs.DeleteAll();
+            starterTrainer = resetStarterTrainer;
             CheckForActivePlayer();
             dayDisplayScript.Days = 1;
+            dayDisplayScript.numberOfDays.text = $"You have been a member for: {dayDisplayScript.Days} days";
             welcomeScreen.SetActive(false);
         }
         public void QuitApplication(){

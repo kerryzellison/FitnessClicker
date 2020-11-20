@@ -17,7 +17,7 @@ namespace Clicker.Player{
         public Text IncomeText;
 
         public void SetStartupValues(){
-            playerData.currentTrainer = playerSetup.starterTrainer;
+            playerData.currentTrainer = playerSetup.resetStarterTrainer;
             playerData.usedTrainers.Clear();
             playerData.usedTrainers.Add(playerSetup.starterTrainer.name);
             playerData.calories.Owned = caloriesStartAmount;

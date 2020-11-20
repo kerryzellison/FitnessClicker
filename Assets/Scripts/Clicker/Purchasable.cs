@@ -46,6 +46,7 @@ namespace Clicker{
                     playerData.currentTrainer = productionUnit;
                     trainerSetup.datas.Remove(productionUnit);
                     _resourceProducer.DestroyThisResourceProducer();
+                    trainerSetup.ActivateNextInLine();
                     break;
                 }
             }

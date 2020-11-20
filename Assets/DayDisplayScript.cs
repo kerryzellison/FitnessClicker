@@ -38,8 +38,11 @@ public class DayDisplayScript : MonoBehaviour{
         if (timeSpan.Days == 1){
             resetTimer();
         }
+        if (playerData.caloriesNeededToBurn <= 0){
+            playerData.dailyCalsNeedToBurn = 0;
+        }
         timeText.text = $"Time of day: {timeSpan}";
-        if (playerData.burnedCalories.Owned < playerData.dailyCalsNeedToBurn){
+        if (playerData.burnedCalories.Owned < playerData.dailyCalsNeedToBurn && playerData.caloriesNeededToBurn >= 1){
             var colorBlock = endDayButton.colors;
             colorBlock.normalColor = Color.red;
             colorBlock.highlightedColor = Color.gray;

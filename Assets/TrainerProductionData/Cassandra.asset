@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc65eebeb2eb04c1a850f024325a3039, type: 3}
+  m_Name: Cassandra
+  m_EditorClassIdentifier: 
+  costs:
+    amount: 10000
+    resource: {fileID: 11400000, guid: 0b8b688a461364e5590aec36aa4f9eb5, type: 2}
+  productionTime: 1
+  production:
+    amount: 3
+    resource: {fileID: 11400000, guid: 7603efcb5591d485f93c23f6f64a5557, type: 2}
+  id: 
