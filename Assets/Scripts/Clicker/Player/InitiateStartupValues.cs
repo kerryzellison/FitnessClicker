@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Clicker.Player{
@@ -15,6 +16,10 @@ namespace Clicker.Player{
         public Text usernameText;
         public Text intakeCaloriesText;
         public Text IncomeText;
+
+        public void Awake(){
+            
+        }
 
         public void SetStartupValues(){
             playerData.currentTrainer = playerSetup.resetStarterTrainer;

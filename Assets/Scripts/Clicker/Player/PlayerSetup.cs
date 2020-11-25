@@ -55,6 +55,11 @@ namespace Clicker.Player{
             get => PlayerPrefs.GetInt("ActiveBody", 0);
             set => PlayerPrefs.SetInt("ActiveBody", value);
         }
+
+        private void Awake(){
+
+        }
+
         void Start(){
             CheckForActivePlayer();
             savedBody = (BodyType) playerBodyType;
@@ -147,6 +152,9 @@ namespace Clicker.Player{
             SwitchBodyType(savedBody);
         }
         public void InitiateStartTrainer(){
+            if (playerData.currentTrainer == null){
+                playerData.currentTrainer = starterTrainer;
+            }
             if (playerData.currentTrainer != null){
                 activeProducer.SetUp();
                 foreach (Transform child in activeProducer.transform){
@@ -211,6 +219,7 @@ namespace Clicker.Player{
         public void NewGame(){
             PlayerPrefs.DeleteAll();
             starterTrainer = resetStarterTrainer;
+            playerData.currentTrainer = starterTrainer;
             CheckForActivePlayer();
             dayDisplayScript.Days = 1;
             dayDisplayScript.numberOfDays.text = $"You have been a member for: {dayDisplayScript.Days} days";
